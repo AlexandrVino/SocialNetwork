@@ -13,5 +13,10 @@ class MyUser(User):
 
     photos = models.CharField(max_length=500, null=True)
 
-    followers = models.CharField(max_length=500, null=True, default='')
+    followers = models.CharField(max_length=5000, null=True, default='')
+    friends = models.CharField(max_length=5000, null=True, default='')
+
+    aboutMe = models.CharField(max_length=500, null=True, default='')
+
+
 
