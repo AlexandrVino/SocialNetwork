@@ -6,10 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 from json import loads
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth.backends import ModelBackend
-from entities.models import MyUser
+from entities.models import *
 from entities.serializers import MyUserSerializers
-
-
+from random import randint
 SESSION = {}
 
 
@@ -23,7 +22,7 @@ def registration_user(request):
     if not in_json:
         return make_resp({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}, request)
 
-    contact_keys = ('github', 'vk', 'facebook', 'instagram', 'twitter', 'website', 'youtube', 'mainLink')
+    contact_keys = ('github', 'vk', 'facebook', 'twitter', 'youtube', 'telegram')
 
     all_data = in_json.copy()
 
@@ -55,7 +54,8 @@ def login_user(request):
         in_json = loads(in_json.decode())
         new_user = MyUser.objects.get_by_natural_key(in_json['email'])
         if not new_user.check_password(in_json['password']):
-            return make_resp({'resultCode': 1, 'messages': ['User with this login not registered'], 'data': {}}, request)
+            return make_resp({'resultCode': 1, 'messages': ['User with this login not registered'], 'data': {}},
+                             request)
 
         login(request, new_user)
         # print(new_user.session)
@@ -76,7 +76,6 @@ def login_user(request):
 
 @transaction.atomic
 def check_authentication(request):
-
     keys = list(SESSION.keys())
     if not keys:
 
@@ -118,31 +117,23 @@ def add_photo(request):
     path = f'static/images/users/{SESSION["user"].id}/'
 
     data = request.body
-    file_name = ''
 
-    try:
-        data[::-1].decode()
-    except BaseException as error:
-        message = str(error)
-        message = message.split('position')[1]
-        message = message.split(':')[0].strip()
-        data = data[:-int(message)]
-    try:
-        data.decode()
-    except BaseException as error:
-        message = str(error)
-        message = message.split('position')[1]
-        message = message.split(':')[0].strip()
-        file_name = str(data[:int(message)])
-        file_name = file_name.split('filename="')[1].split('"')[0].split('.')[-1]
-        file_name = 'profile_photo.' + file_name
-        data = data[int(message):]
+    data, file_name = decode_image(data)
+    index = get_count_of_files(path)
+    file_name = file_name.split('.')[0] + f'_{index + 1}.' + file_name.split('.')[1]
 
-    add_files_in_profile_folder(user_path=path, files={file_name: data})
+    add_files_in_folder(user_path=path, files={file_name: data})
+
+    all_photos = load_json_from_str(SESSION['user'].photos).get('all', '')
+
+    base = all_photos.split('; ')
+    base = base if any(base) else []
+
+    all_photos = base + [f"http://192.168.0.104:8000/{path}{file_name}"]
     SESSION['user'].photos = str({"large": f"http://192.168.0.104:8000/{path}{file_name}",
-                                  "small": f"http://192.168.0.104:8000/{path}{file_name}"})
+                                  "small": f"http://192.168.0.104:8000/{path}{file_name}",
+                                  "all": f"{'; '.join(all_photos)}"})
     SESSION['user'].save()
-    clear_cache()
 
     return make_resp({}, request)
 
@@ -150,7 +141,6 @@ def add_photo(request):
 @transaction.atomic
 @csrf_exempt
 def get_users(request):
-
     args = url_parser(request.get_raw_uri())
 
     users = MyUser.objects.all()
@@ -191,7 +181,6 @@ def follow(request, user_id):
 @transaction.atomic
 @csrf_exempt
 def edit_profile_data(request):
-
     if request.method == 'PUT':
         in_json = request.body
         in_json = loads(in_json.decode())
@@ -227,7 +216,6 @@ def edit_profile_status(request):
 @transaction.atomic
 @csrf_exempt
 def get_followers(request):
-
     curr_user = SESSION.get('user')
 
     users = MyUser.objects.all()
@@ -245,7 +233,6 @@ def get_followers(request):
 @transaction.atomic
 @csrf_exempt
 def get_friends(request):
-
     curr_user = SESSION.get('user')
 
     users = MyUser.objects.all()
@@ -265,7 +252,6 @@ def get_friends(request):
 def add_friend(request, user_id):
     if request.method == 'POST':
         if str(user_id) in SESSION['user'].followers.split(', '):
-
             followers = SESSION['user'].followers
             del followers[followers.index(str(user_id))]
 
@@ -283,7 +269,6 @@ def add_friend(request, user_id):
         return make_resp({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}, request)
     elif request.method == 'DELETE':
         if str(user_id) in SESSION['user'].friends.split(', '):
-
             friends = SESSION['user'].friends
             del friends[friends.index(str(user_id))]
 
@@ -302,4 +287,38 @@ def add_friend(request, user_id):
 
             return make_resp({'resultCode': 0, 'messages': [], 'data': {}}, request)
         return make_resp({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}, request)
+    return make_resp({}, request)
+
+
+@transaction.atomic
+@csrf_exempt
+def add_new_post(request, post_id=None):
+    if request.method == 'POST':
+        in_json = request.body
+        in_json = loads(in_json.decode())
+        if not in_json:
+            return make_resp({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}, request)
+
+        data, file_name = decode_image(in_json['image'])
+
+        post = Post(
+            author=SESSION['user'].id,
+            author_photo=SESSION['user'].photos,
+            message=in_json.get('message', '')
+        )
+
+        path = f'static/images/posts/{post.id}/'
+        add_files_in_folder(user_path=path, files={file_name: data})
+        post.image = path + f'/{file_name}'
+
+    elif request.method == 'DELETE':
+        if post_id is not None:
+            post = Post.objects.all()
+            post = [item for item in post if item.id == post_id]
+            if any(post):
+                post = post[0]
+                post.delete()
+                return make_resp({'resultCode': 0, 'messages': [], 'data': {}}, request)
+            return make_resp({'resultCode': 1, 'messages': ['Incorrect post id'], 'data': {}}, request)
+        return make_resp({'resultCode': 1, 'messages': ['Incorrect request'], 'data': {}}, request)
     return make_resp({}, request)
