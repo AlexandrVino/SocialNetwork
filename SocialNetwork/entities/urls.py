@@ -19,5 +19,9 @@ urlpatterns = [
     path('friends/<int:user_id>', add_friend),
 
     path('followers', get_followers),
-    path('follow/<int:user_id>', follow)
+    path('follow/<int:user_id>', follow),
+
+    path('posts', get_posts),
+    path('add_new_post', add_new_post),
+    path('add_new_post/<int:post_id>', add_new_post)
 ]

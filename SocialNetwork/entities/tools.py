@@ -16,34 +16,36 @@ def make_resp(json, request):
     return response
 
 
-def load_json_from_str(string) -> dict:
+def load_json_from_str(string, key_name) -> dict:
 
     if string:
         string = string[1:-1].split(', ')
         string = [item.split(': ') for item in string]
         string = [item for item in string if any(item)]
-        all_photos = string[-1]
-        string = {key[1:-1]: value[1:-1] for key, value in string[:-1]}
-        string['all'] = all_photos[1][1:-1]
+        if key_name == 'photos':
+            all_photos = string[-1]
+            string = {key[1:-1]: value[1:-1] for key, value in string[:-1]}
+            string['all'] = all_photos[1][1:-1].split('; ')
+        else:
+            string = {key[1:-1]: value[1:-1] for key, value in string}
         return string
     return {}
 
 
-def create_profile_folder(path, user_name):
-    user_path = user_name + '/static/images'
-    user_path = user_path.split('/')
-    for i, folder in enumerate(user_path):
+def create_folder(path, folder_name):
+    folder_name = folder_name.split('/')
+    for i, folder in enumerate(folder_name):
         if i:
-            os.mkdir(path + '/'.join(user_path[:i]) + '/' + folder)
+            os.mkdir(path + '/'.join(folder_name[:i]) + '/' + folder)
         else:
             os.mkdir(path + folder)
 
 
-def add_files_in_folder(user_path, files):
+def add_files_in_folder(path, files):
     data = []
     for key, value in files.items():
-        data += [f'{"/".join(user_path.split("/")[1:])}{key}']
-        with open(f'{user_path}/{key}', 'wb') as f:
+        data += [f'{"/".join(path.split("/")[1:])}{key}']
+        with open(f'{path}/{key}', 'wb') as f:
             f.write(value)
     return data
 
@@ -59,25 +61,27 @@ def url_parser(url) -> dict:
 
 
 def decode_image(base_bytes) -> (bytes, str):
-    file_name = ''
-    try:
-        base_bytes[::-1].decode()
-    except BaseException as error:
-        message = str(error)
-        message = message.split('position')[1]
-        message = message.split(':')[0].strip()
-        base_bytes = base_bytes[:-int(message)]
-    try:
-        base_bytes.decode()
-    except BaseException as error:
-        message = str(error)
-        message = message.split('position')[1]
-        message = message.split(':')[0].strip()
-        file_name = str(base_bytes[:int(message)])
-        file_name = file_name.split('filename="')[1].split('"')[0].split('.')[-1]
-        file_name = 'profile_photo.' + file_name
-        base_bytes = base_bytes[int(message):]
-    return base_bytes, file_name
+    if base_bytes is not None:
+        file_name = ''
+        try:
+            base_bytes[::-1].decode()
+        except BaseException as error:
+            message = str(error)
+            message = message.split('position')[1]
+            message = message.split(':')[0].strip()
+            base_bytes = base_bytes[:-int(message)]
+        try:
+            base_bytes.decode()
+        except BaseException as error:
+            message = str(error)
+            message = message.split('position')[1]
+            message = message.split(':')[0].strip()
+            file_name = str(base_bytes[:int(message)])
+            file_name = file_name.split('filename="')[1].split('"')[0].split('.')[-1]
+            file_name = 'profile_photo.' + file_name
+            base_bytes = base_bytes[int(message):]
+        return base_bytes, file_name
+    return None, None
 
 
 def get_count_of_files(directory) -> int:

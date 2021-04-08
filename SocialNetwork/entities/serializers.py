@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from entities.models import MyUser
+from entities.models import *
 
 
 class MyUserSerializers(serializers.ModelSerializer):
@@ -13,13 +13,11 @@ class MyUserSerializers(serializers.ModelSerializer):
                   'contacts', 'photos', 'id', 'aboutMe')
 
 
+class PostSerializers(serializers.ModelSerializer):
+    """
+    Сериалайзер для моего пользователя
+    """
 
-
-
-
-
-
-
-
-
-
+    class Meta:
+        model = Post
+        fields = ('author', 'author_photo', 'image', 'message', 'likes', 'comments', 'reposts')

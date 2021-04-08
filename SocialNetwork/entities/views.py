@@ -7,7 +7,7 @@ from json import loads
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth.backends import ModelBackend
 from entities.models import *
-from entities.serializers import MyUserSerializers
+from entities.serializers import *
 from random import randint
 SESSION = {}
 
@@ -38,7 +38,7 @@ def registration_user(request):
     new_user = MyUser.objects.create_user(username=in_json['login'], **all_data)
     new_user.set_password(in_json['password'])
     new_user.save()
-    create_profile_folder(path='data/profiles/', user_name=f'{new_user.id}')
+    create_folder(path='static/images/users/', folder_name=f'{new_user.id}')
 
     return make_resp({'resultCode': 0, 'messages': [], 'data': {'userId': new_user.id}}, request)
 
@@ -101,8 +101,9 @@ def get_profile(request, user_id):
     user = [user for user in users if user.id == user_id][0]
     user_json = MyUserSerializers(user).data
 
-    user_json['contacts'] = load_json_from_str(user_json['contacts'])
-    user_json['photos'] = load_json_from_str(user_json['photos'])
+    user_json['contacts'] = load_json_from_str(user_json['contacts'], 'contacts')
+    user_json['photos'] = load_json_from_str(user_json['photos'], 'photos')
+    user_json['is_active'] = user.is_active
 
     return make_resp(user_json, request)
 
@@ -122,9 +123,9 @@ def add_photo(request):
     index = get_count_of_files(path)
     file_name = file_name.split('.')[0] + f'_{index + 1}.' + file_name.split('.')[1]
 
-    add_files_in_folder(user_path=path, files={file_name: data})
+    add_files_in_folder(path=path, files={file_name: data})
 
-    all_photos = load_json_from_str(SESSION['user'].photos).get('all', '')
+    all_photos = load_json_from_str(SESSION['user'].photos, 'photos').get('all', '')
 
     base = all_photos.split('; ')
     base = base if any(base) else []
@@ -149,8 +150,8 @@ def get_users(request):
     users = [MyUserSerializers(user).data for user in users]
     user = SESSION.get('user')
     for user_json in users:
-        user_json['contacts'] = load_json_from_str(user_json['contacts'])
-        user_json['photos'] = load_json_from_str(user_json['photos'])
+        user_json['contacts'] = load_json_from_str(user_json['contacts'], 'contacts')
+        user_json['photos'] = load_json_from_str(user_json['photos'], 'photos')
         user_json['name'] = user_json['fullName']
         user_json['followed'] = str(user_json['id']) in user.followers.split(', ')
 
@@ -223,8 +224,8 @@ def get_followers(request):
     users_count = len(users)
 
     for user_json in users:
-        user_json['contacts'] = load_json_from_str(user_json['contacts'])
-        user_json['photos'] = load_json_from_str(user_json['photos'])
+        user_json['contacts'] = load_json_from_str(user_json['contacts'], 'contacts')
+        user_json['photos'] = load_json_from_str(user_json['photos'], 'photos')
         user_json['name'] = user_json['fullName']
 
     return make_resp({'items': users, "totalCount": users_count, "error": None}, request)
@@ -240,8 +241,8 @@ def get_friends(request):
     users_count = len(users)
 
     for user_json in users:
-        user_json['contacts'] = load_json_from_str(user_json['contacts'])
-        user_json['photos'] = load_json_from_str(user_json['photos'])
+        user_json['contacts'] = load_json_from_str(user_json['contacts'], 'contacts')
+        user_json['photos'] = load_json_from_str(user_json['photos'], 'photos')
         user_json['name'] = user_json['fullName']
 
     return make_resp({'items': users, "totalCount": users_count, "error": None}, request)
@@ -299,7 +300,7 @@ def add_new_post(request, post_id=None):
         if not in_json:
             return make_resp({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}, request)
 
-        data, file_name = decode_image(in_json['image'])
+        data, file_name = decode_image(in_json.get('image', None))
 
         post = Post(
             author=SESSION['user'].id,
@@ -307,9 +308,12 @@ def add_new_post(request, post_id=None):
             message=in_json.get('message', '')
         )
 
-        path = f'static/images/posts/{post.id}/'
-        add_files_in_folder(user_path=path, files={file_name: data})
-        post.image = path + f'/{file_name}'
+        if data is not None and file_name is not None:
+            path = f'static/images/posts/{post.id}/'
+            add_files_in_folder(path=path, files={file_name: data})
+            post.image = path + f'/{file_name}'
+        post.save()
+        return make_resp({'resultCode': 0, 'messages': [], 'data': {}}, request)
 
     elif request.method == 'DELETE':
         if post_id is not None:
@@ -322,3 +326,17 @@ def add_new_post(request, post_id=None):
             return make_resp({'resultCode': 1, 'messages': ['Incorrect post id'], 'data': {}}, request)
         return make_resp({'resultCode': 1, 'messages': ['Incorrect request'], 'data': {}}, request)
     return make_resp({}, request)
+
+
+@transaction.atomic
+@csrf_exempt
+def get_posts(request):
+    if request.method == 'GET':
+        posts = Post.objects.all()
+        posts = [PostSerializers(item).data for item in posts]
+        for post in posts:
+            post['author_photo'] = load_json_from_str(post['author_photo'], 'photos')
+            del  post['author_photo']['all']
+        return make_resp({'resultCode': 0, 'items': posts}, request)
+    return make_resp({}, request)
+
