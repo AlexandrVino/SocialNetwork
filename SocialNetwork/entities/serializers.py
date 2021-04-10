@@ -10,7 +10,7 @@ class MyUserSerializers(serializers.ModelSerializer):
     class Meta:
         model = MyUser
         fields = ('userId', 'lookingForAJob', 'lookingForAJobDescription', 'fullName', 'status',
-                  'contacts', 'photos', 'id', 'aboutMe')
+                  'contacts', 'photos', 'id', 'aboutMe', 'username')
 
 
 class PostSerializers(serializers.ModelSerializer):
@@ -20,4 +20,4 @@ class PostSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('author', 'author_photo', 'image', 'message', 'likes', 'comments', 'reposts')
+        fields = ('id', 'author', 'author_photo', 'image', 'post_text', 'likes', 'comments', 'reposts')

@@ -3,16 +3,12 @@ import os
 from django.core.cache import cache
 
 
-def make_resp(json, request):
-    response = JsonResponse(json)
+def make_resp(response):
     response["Access-Control-Allow-Origin"] = "http://localhost:3000"
     response["access-control-allow-headers"] = "Origin, X-Requested-With, Content-Type, Accept, API-KEY"
     response["access-control-allow-methods"] = "GET, POST, PUT, DELETE, OPTIONS"
     response["access-control-allow-credentials"] = 'true'
     response["access-control-max-age"] = '300'
-
-    response.session = request.session
-
     return response
 
 
@@ -55,8 +51,12 @@ def clear_cache():
 
 
 def url_parser(url) -> dict:
-    user_args = url.split('/users?')[1].split('&')
-    user_args = [item.split('=') for item in user_args]
+    try:
+        user_args = url.split('?')[1].split('&')
+        user_args = [item.split('=') for item in user_args]
+    except IndexError:
+        user_args = url.split('/')[-1]
+        return user_args
     return {item[0]: int(item[1]) for item in user_args}
 
 
