@@ -1,1 +1,1 @@
-# SocialNetworkOnPythonDjango
+# Social Network On Python Django
