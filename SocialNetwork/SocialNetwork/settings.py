@@ -134,5 +134,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, '/images/users/'),
     os.path.join(BASE_DIR, '/images/posts/'),
 )
-
+STATIC_ROOT = os.path.join(BASE_DIR, '/images/')
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
