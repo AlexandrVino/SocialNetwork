@@ -33,7 +33,7 @@ class MyUser(User):
             'id': self.id,
             'email': self.username
         }, SECRET_KEY, algorithm='HS256')
-        return token
+        self.token = token
 
 
 class Post(models.Model):

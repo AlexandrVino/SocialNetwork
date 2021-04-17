@@ -69,7 +69,7 @@ class Authentication(APIView):
                 except django.db.utils.IntegrityError:
                     return make_resp({'resultCode': 1, 'messages': ['Incorrect requests'], 'data': {}})
                 new_user.set_password(login_data['password'])
-                new_user.token = new_user._generate_jwt_token()
+                new_user._generate_jwt_token()
                 new_user.save()
 
                 login(request, new_user)
@@ -117,6 +117,7 @@ class Authentication(APIView):
                 return make_resp(resp)
             else:
                 new_user = authenticate_user(request_json['Token'])
+                print(111)
                 if any(new_user):
                     login(request, new_user)
                     resp = Response({'resultCode': 0, 'token': request_json['Token'], 'data': {}})
@@ -447,8 +448,8 @@ class Profile(APIView):
 
 
 def authenticate_user(token) -> MyUser:
-    user_data = jwt.decode(token, SECRET_KEY, algorithms='HS256')
     try:
+        user_data = jwt.decode(token, SECRET_KEY, algorithms='HS256')
         return MyUser.objects.get(id=user_data['id'])
-    except KeyError:
+    except BaseException:
         return None
