@@ -118,7 +118,7 @@ class Authentication(APIView):
             else:
                 new_user = authenticate_user(request_json['Token'])
                 print(111)
-                if any(new_user):
+                if new_user is not None:
                     login(request, new_user)
                     resp = Response({'resultCode': 0, 'token': request_json['Token'], 'data': {}})
                     return make_resp(resp)
