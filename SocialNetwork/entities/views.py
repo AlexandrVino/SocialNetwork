@@ -29,9 +29,22 @@ class Authentication(APIView):
                     resp = Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}})
                     return make_resp(resp)
 
+                request_json_new = {}
+                for key, value in request_json.items():
+                    if key == 'photos':
+                        request_json_new[key] = value
+                    elif key == 'contactsForm':
+                        request_json_new['contacts'] = value
+                    else:
+                        for key_, value_ in value.items():
+                            request_json_new[key_] = value_
+
+                request_json = request_json_new.copy()
+                print(request_json)
+
                 contact_keys = ('github', 'vk', 'facebook', 'twitter', 'youtube', 'telegram')
 
-                request_json['contacts'] = loads(request_json.get('contacts', '{}'))
+                request_json['contacts'] = request_json.get('contacts', {})
                 for key in contact_keys:
                     if request_json['contacts'].get(key, None) is None:
                         request_json['contacts'][key] = ''
@@ -39,21 +52,28 @@ class Authentication(APIView):
 
                 login_data = {'password': request_json['password'],
                               'username': request_json['login']}
-
+                print(login_data, 1111111)
                 del request_json['login']
                 del request_json['password']
+                del request_json['passwordClone']
+
                 image = {'image': request_json.get('image', None)}
                 if image['image']:
                     del request_json['image']
-                if MyUser.objects.get(username == login_data['username']):
+                if any(MyUser.objects.filter(username=login_data['username']).all()):
                     resp = Response({'resultCode': 1, 'messages': ['User with this login has already exists'],
                                      'data': {}})
                     return make_resp(resp)
-                new_user = MyUser.objects.create_user(username=login_data['username'], **request_json)
+                try:
+                    new_user = MyUser.objects.create_user(username=login_data['username'], **request_json)
+                except django.db.utils.IntegrityError:
+                    return make_resp({'resultCode': 1, 'messages': ['Incorrect requests'], 'data': {}})
                 new_user.set_password(login_data['password'])
+                new_user.token = new_user._generate_jwt_token()
                 new_user.save()
 
                 login(request, new_user)
+
                 create_folder(path='static/images/users/', folder_name=f'{new_user.id}')
 
                 path = f'static/images/users/{new_user.id}/'
@@ -65,48 +85,74 @@ class Authentication(APIView):
 
                     add_files_in_folder(path=path, files={file_name: data})
 
-                    all_photos = load_json_from_str(SESSION['user'].photos, 'photos').get('all', '')
+                    all_photos = load_json_from_str(new_user.photos, 'photos').get('all', '')
                     base = all_photos if any(all_photos) else []
 
                     all_photos = base + [f"http://192.168.0.104:8000/{path}{file_name}"]
                     all_data['photos'] = str({"large": f"http://192.168.0.104:8000/{path}{file_name}",
                                               "small": f"http://192.168.0.104:8000/{path}{file_name}",
                                               "all": f"{'; '.join(all_photos)}"})
-                resp = Response({'resultCode': 0, 'messages': [], 'data': {}})
+
+                resp = Response({'resultCode': 0, 'messages': [], 'data': {'token': new_user.token}})
                 return make_resp(resp)
             except KeyError:
                 resp = Response({'resultCode': 1, 'messages': ['Incorrect requests'], 'data': {}})
                 return make_resp(resp)
         elif self.request_type == 'login':
             request_json = request.data
-            if not request_json:
-                resp = Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}})
-                return make_resp(resp)
+            if request_json.get('Token', None) is None:
+                if not request_json:
+                    resp = Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}})
+                    return make_resp(resp)
 
-            new_user = MyUser.objects.get_by_natural_key(request_json['email'])
-            if not new_user.check_password(request_json['password']):
-                resp = Response({'resultCode': 1, 'messages': ['Incorrect password'], 'data': {}})
-                return make_resp(resp)
+                new_user = MyUser.objects.get_by_natural_key(request_json['email'])
+                if not new_user.check_password(request_json['password']):
+                    resp = Response({'resultCode': 1, 'messages': ['Incorrect password'], 'data': {}})
+                    return make_resp(resp)
 
-            login(request, new_user)
-            self.user = new_user
-            SESSION['user'] = new_user
-            resp = Response({'resultCode': 0, 'messages': [], 'data': {}})
-            return make_resp(resp)
+                login(request, new_user)
+                new_user._generate_jwt_token()
+                new_user.save()
+                resp = Response({'resultCode': 0, 'token': new_user.token, 'data': {}})
+                return make_resp(resp)
+            else:
+                new_user = authenticate_user(request_json['Token'])
+                if any(new_user):
+                    login(request, new_user)
+                    resp = Response({'resultCode': 0, 'token': request_json['Token'], 'data': {}})
+                    return make_resp(resp)
+                else:
+                    resp = Response({'resultCode': 1, 'messages': [], 'data': {}})
+                    return make_resp(resp)
 
     def options(self, request, *args, **kwargs):
         resp = Response({})
         return make_resp(resp)
 
     def get(self, request, *args, **kwargs):
-        user = SESSION.get('user', None)
+        user = request.headers.get('Token', None)
+        print(user)
         if str(user) != 'AnonymousUser' and user is not None:
+            user = authenticate_user(user)
+            print(user)
+            if user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
             resp = Response({'resultCode': 0, 'messages': [], 'data': {'id': user.id,
                                                                        'email': user.email,
                                                                        'login': user.username}})
             return make_resp(resp)
         else:
             resp = Response({'resultCode': 1, 'messages': ['You are not authentication'], 'data': {}})
+            return make_resp(resp)
+
+    def delete(self, request, *args, **kwargs):
+        if self.request_type == 'login':
+            user = authenticate_user(request.headers['Token'])
+            if user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            user.token = ''
+            user.save()
+            resp = Response({'resultCode': 0, 'messages': [], 'data': {}})
             return make_resp(resp)
 
 
@@ -116,28 +162,36 @@ class Profile(APIView):
     def post(self, request, *args, **kwargs):
         if self.request_type == 'add_friend':
             user_id = int(url_parser(request.get_raw_uri()))
-            if str(user_id) in SESSION['user'].followers.split(', '):
-                followers = SESSION['user'].followers
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            if str(user_id) in curr_user.followers.split(', '):
+                followers = curr_user.followers
                 del followers[followers.index(str(user_id))]
-
-                SESSION['user'].followers = ', '.join(followers)
-                SESSION['user'].friends = ', '.join(SESSION['user'].friends.split(', ') + [str(user_id)])
-                SESSION['user'].save()
+                curr_user.followers = ', '.join(followers)
+                curr_user.friends = ', '.join(curr_user.friends.split(', ') + [str(user_id)])
+                curr_user.save()
 
                 user_ = MyUser.objects.get(id=user_id)
-                user_.friends = ', '.join(user_.friends.split(', ') + [str(SESSION['user'].id)])
+                user_.friends = ', '.join(user_.friends.split(', ') + [str(curr_user.id)])
                 user_.save()
 
                 return make_resp(Response({'resultCode': 0, 'messages': [], 'data': {}}))
         elif self.request_type == 'follow':
             user_id = int(url_parser(request.get_raw_uri()))
-            user = SESSION['user']
-            user.followers = ', '.join(
+
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            curr_user.followers = ', '.join(
                 [follower.strip() for follower in user.followers.split(', ') if follower.strip()] +
                 [str(user_id)])
-            user.save()
+            curr_user.save()
         elif self.request_type == 'add_new_post':
             request_json = request.data
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
             if not request_json:
                 return make_resp(Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}))
             data = file_name = None
@@ -149,10 +203,10 @@ class Profile(APIView):
                 file_name = 'profile_photo' + f'_{index + 1}.' + data.name.split('.')[1]
             except KeyError:
                 pass
-            photos = load_json_from_str(SESSION['user'].photos, 'photos')
+            photos = load_json_from_str(curr_user.photos, 'photos')
             del photos['all']
             post = Post(
-                author=SESSION['user'].id,
+                author=curr_user.id,
                 author_photo=photos,
                 post_text=request_json.get('newPostText', '')
             )
@@ -219,7 +273,7 @@ class Profile(APIView):
 
             users = users[first_user_index:last_user_index]
             users = [MyUserSerializers(user).data for user in users]
-            user = SESSION.get('user')
+            user = authenticate_user(request.headers['Token'])
             for user_json in users:
                 user_json['contacts'] = load_json_from_str(user_json['contacts'], 'contacts')
                 user_json['photos'] = load_json_from_str(user_json['photos'], 'photos')
@@ -247,23 +301,28 @@ class Profile(APIView):
             request_json = request.data
             if not request_json:
                 return make_resp(Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}))
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            curr_user.contacts = str(request_json.get('contacts', curr_user.contacts))
+            curr_user.lookingForAJob = str(request_json.get('lookingForAJob', curr_user.lookingForAJob))
+            curr_user.lookingForAJobDescription = str(request_json.get('lookingForAJobDescription',
+                                                                       curr_user.lookingForAJobDescription))
+            curr_user.aboutMe = request_json.get('aboutMe', curr_user.aboutMe)
+            curr_user.fullName = request_json.get('fullName', curr_user.fullName)
 
-            SESSION['user'].contacts = str(request_json.get('contacts', SESSION['user'].contacts))
-            SESSION['user'].lookingForAJob = str(request_json.get('lookingForAJob', SESSION['user'].lookingForAJob))
-            SESSION['user'].lookingForAJobDescription = str(request_json.get('lookingForAJobDescription',
-                                                                             SESSION['user'].lookingForAJobDescription))
-            SESSION['user'].aboutMe = request_json.get('aboutMe', SESSION['user'].aboutMe)
-            SESSION['user'].fullName = request_json.get('fullName', SESSION['user'].fullName)
-
-            SESSION['user'].save()
+            curr_user.save()
 
             return make_resp(Response({'resultCode': 0, 'messages': [], 'data': {}}))
         elif self.request_type == 'set_profile_photo':
+
             request_json = request.data
             if not request_json:
                 return make_resp(Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}))
-
-            path = f'static/images/users/{SESSION["user"].id}/'
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            path = f'static/images/users/{curr_user.id}/'
 
             data = request_json['image']
             index = get_count_of_files(path)
@@ -272,17 +331,17 @@ class Profile(APIView):
             data_file = data.read()
             add_files_in_folder(path=path, files={file_name: data_file})
 
-            all_photos = load_json_from_str(SESSION['user'].photos, 'photos').get('all', '')
+            all_photos = load_json_from_str(curr_user.photos, 'photos').get('all', '')
             base = all_photos if any(all_photos) else []
 
             all_photos = base + [f"http://192.168.0.104:8000/{path}{file_name}"]
             large_and_small = {"large": f"http://192.168.0.104:8000/{path}{file_name}",
                                "small": f"http://192.168.0.104:8000/{path}{file_name}"}
-            SESSION['user'].photos = str({"large": f"http://192.168.0.104:8000/{path}{file_name}",
-                                          "small": f"http://192.168.0.104:8000/{path}{file_name}",
-                                          "all": f"{'; '.join(all_photos)}"})
-            SESSION['user'].save()
-            posts = Post.objects.filter(author=SESSION['user'].id).all()
+            curr_user.photos = str({"large": f"http://192.168.0.104:8000/{path}{file_name}",
+                                    "small": f"http://192.168.0.104:8000/{path}{file_name}",
+                                    "all": f"{'; '.join(all_photos)}"})
+            curr_user.save()
+            posts = Post.objects.filter(author=curr_user.id).all()
             for post in posts:
                 post.author_photo = str(large_and_small)
                 post.save()
@@ -292,9 +351,11 @@ class Profile(APIView):
             request_json = request.data
             if not request_json:
                 return make_resp(Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}))
-
-            SESSION['user'].status = request_json['status']
-            SESSION['user'].save()
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            curr_user.status = request_json['status']
+            curr_user.save()
 
             return make_resp(Response({'resultCode': 0, 'messages': [], 'data': {}}))
         elif self.request_type == 'add_new_post':
@@ -302,13 +363,15 @@ class Profile(APIView):
             request_json = request.data
             if not request_json:
                 return make_resp(Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}))
-            try:
-                path = f'static/images/posts/{post_id}/'
-                data = request_json['image']
+
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            path = f'static/images/posts/{post_id}/'
+            data = request_json.get('image', None)
+            if data is not None:
                 index = get_count_of_files(path)
                 file_name = 'profile_photo' + f'_{index + 1}.' + data.name.split('.')[1]
-            except KeyError:
-                pass
 
             post = Post.objects.get(id=post_id)
             data = file_name = None
@@ -320,7 +383,7 @@ class Profile(APIView):
                     all_likes = [load_json_from_str(like_user, 'likes') for like_user in post.likes.split('; ')]
                     base = all_likes if any(all_likes) else []
 
-                    all_likes = base + [str(MyUserSerializers(SESSION['user']).data)]
+                    all_likes = base + [str(MyUserSerializers(curr_user).data)]
                     post.likes = '; '.join(all_likes)
             else:
                 return make_resp(Response({'resultCode': 1, 'messages': ['Incorrect post id'], 'data': {}}))
@@ -340,18 +403,21 @@ class Profile(APIView):
     def delete(self, request, *args, **kwargs):
         if self.request_type == 'add_friend':
             user_id = int(url_parser(request.get_raw_uri()))
-            if str(user_id) in SESSION['user'].friends.split(', '):
-                friends = SESSION['user'].friends
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            if str(user_id) in curr_user.friends.split(', '):
+                friends = curr_user.friends
                 del friends[friends.index(str(user_id))]
 
-                SESSION['user'].friends = ', '.join(friends)
-                SESSION['user'].followers = ', '.join(SESSION['user'].followers.split(', ') + [str(user_id)])
-                SESSION['user'].save()
+                curr_user.friends = ', '.join(friends)
+                curr_user.followers = ', '.join(curr_user.followers.split(', ') + [str(user_id)])
+                curr_user.save()
 
                 user_ = MyUser.objects.get(id=user_id)
 
                 friends = user_.friends
-                del friends[friends.index(str(SESSION['user'].id))]
+                del friends[friends.index(str(curr_user.id))]
 
                 user_.friends = ', '.join(friends)
                 user_.save()
@@ -360,11 +426,13 @@ class Profile(APIView):
             return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
         elif self.request_type == 'follow':
             user_id = int(url_parser(request.get_raw_uri()))
-            user = SESSION['user']
-            followers = [follower.strip() for follower in user.followers.split(', ') if follower.strip()]
+            curr_user = authenticate_user(request.headers['Token'])
+            if curr_user is None:
+                return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+            followers = [follower.strip() for follower in curr_user.followers.split(', ') if follower.strip()]
             del followers[followers.index(str(user_id))]
-            user.followers = ', '.join(followers)
-            user.save()
+            curr_user.followers = ', '.join(followers)
+            curr_user.save()
 
             return make_resp(Response({'resultCode': 0, 'messages': [], 'data': {}}))
         elif self.request_type == 'add_new_post':
@@ -376,3 +444,11 @@ class Profile(APIView):
                     return make_resp(Response({'resultCode': 0, 'messages': [], 'data': {}}))
                 return make_resp(Response({'resultCode': 1, 'messages': ['Incorrect post id'], 'data': {}}))
             return make_resp(Response({'resultCode': 1, 'messages': ['Incorrect request'], 'data': {}}))
+
+
+def authenticate_user(token) -> MyUser:
+    user_data = jwt.decode(token, SECRET_KEY, algorithms='HS256')
+    try:
+        return MyUser.objects.get(id=user_data['id'])
+    except KeyError:
+        return None

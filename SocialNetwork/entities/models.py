@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.admin import User
+from datetime import datetime, timedelta
+import jwt
+from SocialNetwork.settings import SECRET_KEY
 
 
 class MyUser(User):
@@ -17,10 +20,24 @@ class MyUser(User):
     friends = models.CharField(max_length=5000, null=True, default='')
 
     aboutMe = models.CharField(max_length=500, null=True, default='')
+    token = models.CharField(max_length=1000, null=True, default='')
+
+    def _generate_jwt_token(self):
+        """
+        Генерирует веб-токен JSON, в котором хранится идентификатор этого
+        пользователя, срок действия токена составляет 1 день от создания
+        """
+        dt = datetime.now() + timedelta(days=1)
+
+        token = jwt.encode({
+            'id': self.id,
+            'email': self.username
+        }, SECRET_KEY, algorithm='HS256')
+        return token
 
 
 class Post(models.Model):
-    author = models.IntegerField()
+    author = models.IntegerField(null=True)
     author_photo = models.CharField(max_length=5000, null=True)
     image = models.CharField(max_length=5000, null=True)
     post_text = models.CharField(max_length=5000, null=True)

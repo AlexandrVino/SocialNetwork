@@ -5,7 +5,7 @@ from entities.views import *
 urlpatterns = [
     path('auth/me', Authentication.as_view()),
     path('auth/login', Authentication.as_view(request_type='login')),
-    path('auth/registration', Authentication.as_view(request_type='registration')),
+    path('auth/reg', Authentication.as_view(request_type='registration')),
 
     path('profile', Profile.as_view(request_type='edit_profile_data')),
     path('profile/<int:user_id>', Profile.as_view(request_type='get_profile')),

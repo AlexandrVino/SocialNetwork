@@ -5,10 +5,10 @@ from django.core.cache import cache
 
 def make_resp(response):
     response["Access-Control-Allow-Origin"] = "http://localhost:3000"
-    response["access-control-allow-headers"] = "Origin, X-Requested-With, Content-Type, Accept, API-KEY"
+    response["access-control-allow-headers"] = "Origin, X-Requested-With, Content-Type, Accept, API-KEY, token"
     response["access-control-allow-methods"] = "GET, POST, PUT, DELETE, OPTIONS"
     response["access-control-allow-credentials"] = 'true'
-    response["access-control-max-age"] = '300'
+    response["access-control-max-age"] = '1500'
     return response
 
 
