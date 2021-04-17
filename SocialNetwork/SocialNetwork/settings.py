@@ -135,5 +135,5 @@ STATICFILES_DIRS = [
     '/images/users/',
     '/images/posts/',
 ]
-STATIC_ROOT = '/'
+STATIC_ROOT = '/static/'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
