@@ -25,8 +25,10 @@ SECRET_KEY = '01y%ut@xm05^@zvq9e#nk)^&9m-)e^g(u8&m%_h6hh-qhq8_3f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',
-                 '192.168.0.104']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '192.168.0.104'
+]
 
 # Application definition
 
@@ -37,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'socketio_app',
     'entities',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'static'
+
 ]
 
 MIDDLEWARE = [
@@ -130,11 +134,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/static'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/images/users/',
     '/images/posts/',
 ]
-
-STATIC_ROOT = None
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+print(STATIC_ROOT, STATICFILES_DIRS)

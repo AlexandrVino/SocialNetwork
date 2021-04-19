@@ -15,7 +15,7 @@ class MyUserSerializers(serializers.ModelSerializer):
 
 class PostSerializers(serializers.ModelSerializer):
     """
-    Сериалайзер для моего пользователя
+    Сериалайзер для поста
     """
 
     class Meta:

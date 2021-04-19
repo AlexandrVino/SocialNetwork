@@ -17,7 +17,7 @@ from rest_framework.response import Response
 SESSION = {}
 
 
-class Authentication(APIView):
+class AuthenticationView(APIView):
     request_type = None
     user = None
 
@@ -157,7 +157,7 @@ class Authentication(APIView):
             return make_resp(resp)
 
 
-class Profile(APIView):
+class ProfileView(APIView):
     request_type = None
 
     def post(self, request, *args, **kwargs):
@@ -278,7 +278,6 @@ class Profile(APIView):
             for user_json in users:
                 user_json['contacts'] = load_json_from_str(user_json['contacts'], 'contacts')
                 user_json['photos'] = load_json_from_str(user_json['photos'], 'photos')
-                user_json['name'] = user_json['fullName']
                 user_json['followed'] = str(user_json['id']) in user.followers.split(', ')
                 user_json['name'] = user_json['username'] if not user_json['fullName'] else user_json['fullName']
 

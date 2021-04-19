@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+import SocialNetwork.settings as settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('entities.urls'))
+    path('', include('entities.urls'), {'document_root': settings.STATICFILES_DIRS}),
+    path('chats', include('socketio_app.urls'))
 ]
