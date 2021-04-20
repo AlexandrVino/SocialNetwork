@@ -1,6 +1,13 @@
 from django.http import JsonResponse, HttpResponse
 import os
 from django.core.cache import cache
+import logging
+
+logging.basicConfig(
+    filename='logger.log',
+    level=logging.DEBUG,
+    format='%(asctime)s %(levelname)s %(name)s %(message)s'
+)
 
 
 def make_resp(response):
@@ -13,7 +20,6 @@ def make_resp(response):
 
 
 def load_json_from_str(string, key_name) -> dict:
-
     if string:
         string = string[1:-1].split(', ')
         string = [item.split(': ') for item in string]

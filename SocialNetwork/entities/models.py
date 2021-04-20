@@ -37,6 +37,7 @@ class MyUser(User):
 
 
 class Post(models.Model):
+    user_page = models.IntegerField(null=True)
     author = models.IntegerField(null=True)
     photo = models.CharField(max_length=5000, null=True)
     image = models.CharField(max_length=5000, null=True)
