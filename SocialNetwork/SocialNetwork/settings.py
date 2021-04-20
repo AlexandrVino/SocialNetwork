@@ -142,7 +142,8 @@ STATIC_ROOT = 'staticfiles/'
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
 
 os.makedirs(STATIC_TMP, exist_ok=True)
-
+for dir in STATICFILES_DIRS:
+    os.makedirs(dir, exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
