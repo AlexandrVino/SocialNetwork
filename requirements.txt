@@ -19,5 +19,4 @@ greenlet==0.4.16
 monotonic==1.5
 python-engineio
 python-socketio
-pytz==2020.1
 six==1.15.0
