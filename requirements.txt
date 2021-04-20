@@ -12,3 +12,12 @@ pytz==2021.1
 requests==2.25.1
 sqlparse==0.4.1
 urllib3==1.26.4
+dnspython==1.16.0
+enum-compat==0.0.3
+eventlet==0.25.2
+greenlet==0.4.16
+monotonic==1.5
+python-engineio
+python-socketio
+pytz==2020.1
+six==1.15.0
