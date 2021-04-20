@@ -133,8 +133,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/images/users/',
-    '/images/posts/',
+    BASE_DIR / 'images/users/',
+    BASE_DIR / 'images/posts/',
 ]
 
 STATIC_ROOT = 'staticfiles/'
