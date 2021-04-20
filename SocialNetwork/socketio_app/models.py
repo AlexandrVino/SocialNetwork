@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 class ChatRoom(models.Model):
+    id = models.IntegerField(auto_created=True, primary_key=True)
     users = models.CharField(max_length=500, null=True)
     messages = models.CharField(max_length=5000, null=True)
 
@@ -12,6 +13,6 @@ class ChatRoom(models.Model):
 
 class Message(models.Model):
     author = models.IntegerField(null=True)
-    message_id = models.IntegerField(null=True, auto_created=True)
-    message_text = models.CharField(max_length=5000, null=True)
-    message_images = models.CharField(max_length=5000, null=True)
+    id = models.IntegerField(auto_created=True, primary_key=True)
+    text = models.CharField(max_length=5000, null=True)
+    images = models.CharField(max_length=5000, null=True)

@@ -208,8 +208,8 @@ class ProfileView(APIView):
             del photos['all']
             post = Post(
                 author=curr_user.id,
-                author_photo=photos,
-                post_text=request_json.get('newPostText', '')
+                photo=photos,
+                text=request_json.get('newPostText', '')
             )
 
             if data is not None and file_name is not None:
@@ -218,10 +218,10 @@ class ProfileView(APIView):
                 post.image = path + f'/{file_name}'
             post.save()
             post = PostSerializers(post).data
-            post['author_photo'] = load_json_from_str(post['author_photo'], 'photos')
+            post['photo'] = load_json_from_str(post['photo'], 'photos')
             post['author'] = MyUser.objects.get(id=post['author']).username
             post['fullName'] = post['author']
-            del post['author_photo']['all']
+            del post['photo']['all']
             return make_resp(Response({'resultCode': 0, 'messages': [], 'data': post}))
 
         return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
@@ -259,10 +259,10 @@ class ProfileView(APIView):
             posts = Post.objects.filter(author=user_id).all()
             posts = [PostSerializers(item).data for item in posts]
             for post in posts:
-                post['author_photo'] = load_json_from_str(post['author_photo'], 'photos')
+                post['photo'] = load_json_from_str(post['photo'], 'photos')
                 post['author'] = MyUser.objects.get(id=post['author']).username
                 post['fullName'] = post['author']
-                del post['author_photo']['all']
+                del post['photo']['all']
             return make_resp(Response({'resultCode': 0, 'items': posts}))
         elif self.request_type == 'get_users':
             args = url_parser(request.get_raw_uri())
@@ -343,7 +343,7 @@ class ProfileView(APIView):
             curr_user.save()
             posts = Post.objects.filter(author=curr_user.id).all()
             for post in posts:
-                post.author_photo = str(large_and_small)
+                post.photo = str(large_and_small)
                 post.save()
 
             return make_resp(Response({'resultCode': 0, 'messages': [], 'data': large_and_small}))
@@ -377,7 +377,7 @@ class ProfileView(APIView):
             data = file_name = None
             # add likes
             if post:
-                post.post_text = request_json.get('newPostText', post.post_text)
+                post.text = request_json.get('newPostText', post.text)
 
                 if request_json.get('likes', False):
                     all_likes = [load_json_from_str(like_user, 'likes') for like_user in post.likes.split('; ')]
@@ -394,10 +394,10 @@ class ProfileView(APIView):
                 post.image = path + f'/{file_name}'
             post.save()
             post = PostSerializers(post).data
-            post['author_photo'] = load_json_from_str(post['author_photo'], 'photos')
+            post['photo'] = load_json_from_str(post['photo'], 'photos')
             post['author'] = MyUser.objects.get(id=post['author']).username
             post['fullName'] = post['author']
-            del post['author_photo']['all']
+            del post['photo']['all']
             return make_resp(Response({'resultCode': 0, 'messages': [], 'data': post}))
 
     def delete(self, request, *args, **kwargs):

@@ -46,7 +46,7 @@ class ChatsView(APIView):
                 if str(mess.id) in mess_ids.split(', '):
                     data = MessageSerializers(mess).data
                     author = MyUser.objects.get(id=data['author'])
-                    data['author_photo'] = load_json_from_str(author.photos, 'photos')['large']
+                    data['photo'] = load_json_from_str(author.photos, 'photos')['large']
                     data['author'] = author.username
                     data['author_id'] = author.id
                     arr += [data]
@@ -59,7 +59,7 @@ class ChatsView(APIView):
             for user_json in users:
                 user_js = {}
                 if str(user_json['id']) in chat['users'].split(', '):
-                    user_js['photos'] = load_json_from_str(user_json['photos'], 'photos')['large']
+                    user_js['photo'] = load_json_from_str(user_json['photos'], 'photos')['large']
                     user_js['fullName'] = user_json['username'] if not user_json['fullName'] else user_json['fullName']
                     user_js['id'] = user_json['id']
                     arr += [user_js]

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'entities',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'socketio_app'
 ]
 
 MIDDLEWARE = [

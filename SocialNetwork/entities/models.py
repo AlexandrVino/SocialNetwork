@@ -38,9 +38,9 @@ class MyUser(User):
 
 class Post(models.Model):
     author = models.IntegerField(null=True)
-    author_photo = models.CharField(max_length=5000, null=True)
+    photo = models.CharField(max_length=5000, null=True)
     image = models.CharField(max_length=5000, null=True)
-    post_text = models.CharField(max_length=5000, null=True)
+    text = models.CharField(max_length=5000, null=True)
     likes = models.CharField(max_length=5000, null=True)
     comments = models.CharField(max_length=5000, null=True)
     reposts = models.CharField(max_length=5000, null=True)
