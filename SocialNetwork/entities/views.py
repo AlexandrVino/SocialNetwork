@@ -51,7 +51,7 @@ class AuthenticationView(APIView):
 
                     login_data = {'password': request_json['password'],
                                   'username': request_json['login']}
-                    print(login_data, 1111111)
+
                     del request_json['login']
                     del request_json['password']
                     del request_json['passwordClone']
@@ -75,22 +75,24 @@ class AuthenticationView(APIView):
 
                     create_folder(path='static/images/users/', folder_name=f'{new_user.id}')
 
-                    path = f'static/images/users/{new_user.id}/'
-                    data = request_json.get('image', None)
-                    if data is not None:
-                        data, file_name = decode_image(data)
+                    if image['image']:
+                        path = f'static/images/users/{curr_user.id}/'
+
+                        data = image['image']
                         index = get_count_of_files(path)
-                        file_name = file_name.split('.')[0] + f'_{index + 1}.' + file_name.split('.')[1]
+                        file_name = 'profile_photo' + f'_{index + 1}.' + data.name.split('.')[1]
 
-                        add_files_in_folder(path=path, files={file_name: data})
+                        data_file = data.read()
+                        add_files_in_folder(path=path, files={file_name: data_file})
 
-                        all_photos = load_json_from_str(new_user.photos, 'photos').get('all', '')
+                        all_photos = load_json_from_str(curr_user.photos, 'photos').get('all', '')
                         base = all_photos if any(all_photos) else []
 
                         all_photos = base + [f"http://192.168.0.104:8000/{path}{file_name}"]
-                        all_data['photos'] = str({"large": f"http://192.168.0.104:8000/{path}{file_name}",
-                                                  "small": f"http://192.168.0.104:8000/{path}{file_name}",
-                                                  "all": f"{'; '.join(all_photos)}"})
+                        curr_user.photos = str({"large": f"http://192.168.0.104:8000/{path}{file_name}",
+                                                "small": f"http://192.168.0.104:8000/{path}{file_name}",
+                                                "all": f"{'; '.join(all_photos)}"})
+                        curr_user.save()
 
                     resp = Response({'resultCode': 0, 'messages': [], 'data': {'token': new_user.token}})
                     return make_resp(resp)
@@ -320,9 +322,11 @@ class ProfileView(APIView):
                 if not request_json:
                     return make_resp(Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}}))
                 curr_user = authenticate_user(request.headers['Token'])
+
                 if curr_user is None:
                     return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
-                curr_user.contacts = str(request_json.get('contacts', curr_user.contacts))
+                if request_json.get('youtube', None) is not None:
+                    curr_user.contacts = str(request_json)
                 curr_user.lookingForAJob = str(request_json.get('lookingForAJob', curr_user.lookingForAJob))
                 curr_user.lookingForAJobDescription = str(request_json.get('lookingForAJobDescription',
                                                                            curr_user.lookingForAJobDescription))

@@ -8,11 +8,11 @@ class ChatRoom(models.Model):
     messages = models.CharField(max_length=5000, null=True)
 
     def add_message(self, mess):
-        self.messages = self.messages.split(', ') + [mess.id]
+        self.messages = ', '.join(self.messages.split(', ') + [str(mess.id)])
+        self.save()
 
 
 class Message(models.Model):
     author = models.IntegerField(null=True)
-    id = models.IntegerField(auto_created=True, primary_key=True)
     text = models.CharField(max_length=5000, null=True)
     images = models.CharField(max_length=5000, null=True)

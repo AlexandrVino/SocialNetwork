@@ -17,7 +17,7 @@ from rest_framework.views import APIView
 
 async_mode = 'eventlet'
 basedir = os.path.dirname(os.path.realpath(__file__))
-sio = socketio.Server(async_mode=async_mode)
+sio = socketio.Server(async_mode=async_mode, cors_allowed_origins=['http://localhost:3000'])
 
 thread = None
 
@@ -32,18 +32,42 @@ class ChatsView(APIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            curr_user = authenticate_user(request.headers['Token'])
-            chats = ChatRoom.objects.all()
-            new_chats = []
-            for chat in chats:
-                if str(curr_user.id) in chat.users.split(', '):
-                    new_chats.append(chat)
-            chats = new_chats
-            response_items = [ChatSerializers(chat).data for chat in chats]
-            for chat in response_items:
+            args = url_parser(request.get_raw_uri())
+            if type(args) is not dict:
+                curr_user = authenticate_user(request.headers['Token'])
+                chats = ChatRoom.objects.all()
+                new_chats = []
+                for chat in chats:
+                    if str(curr_user.id) in chat.users.split(', '):
+                        new_chats.append(chat)
+                chats = new_chats
+                response_items = [ChatSerializers(chat).data for chat in chats]
+                for chat in response_items:
+                    chat['lastMessage'] = MessageSerializers(
+                        Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
+                    user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
+                                                     if int(us_id) != curr_user.id][0]).first()
+                    us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
+                    chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
+                    chat['lastMessage']['author'] = user.fullName
+                    chat['title'] = user.fullName
+                    chat['photo'] = load_json_from_str(user.photos, 'photos')['large']
+
+                resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': response_items})
+                return make_resp(resp)
+            else:
+                global thread
+                if thread is None:
+                    thread = sio.start_background_task(background_thread)
+                curr_user = authenticate_user(request.headers['Token'])
+                chat = ChatRoom.objects.filter(id=args['room']).first()
+                chat = ChatSerializers(chat).data
+
                 mess_ids = chat['messages']
                 arr = []
-                for mess in Message.objects.all():
+                for mess in Message.objects.all()[::-1]:
+                    if len(arr) >= 50:
+                        break
                     if str(mess.id) in mess_ids.split(', '):
                         data = MessageSerializers(mess).data
                         author = MyUser.objects.get(id=data['author'])
@@ -51,7 +75,10 @@ class ChatsView(APIView):
                         data['author'] = author.username
                         data['author_id'] = author.id
                         arr += [data]
-                chat['messages'] = arr
+                chat['messages'] = arr[::-1]
+                user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
+                                                 if int(us_id) != curr_user.id][0]).first()
+                chat['title'] = user.fullName
 
                 arr = []
                 users = MyUser.objects.all()
@@ -67,12 +94,12 @@ class ChatsView(APIView):
                         arr += [user_js]
                 chat['users'] = arr
 
-            resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': response_items})
-            return make_resp(resp)
+                resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': chat})
+                return make_resp(resp)
 
         except BaseException as err:
             logging.warning(err)
-            return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+            return make_resp(JsonResponse({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
 
 
 class MyWebSocketServer(socketio.Server):
@@ -90,13 +117,47 @@ def background_thread():
     print([*locals(), 1])
     """Example of how to send server generated events to clients."""
     count = 0
-    print(count)
+    while True:
+        sio.sleep(10)
+        count += 1
+        sio.emit('response', {'data': 'Server generated event'},
+                 namespace='/test')
 
 
 @sio.event
 def my_event(sid, message):
     print([*locals(), 2])
-    sio.emit('my_response', {'data': message['data']}, room=sid)
+    sio.emit('response', {'data': message['data']}, room=sid)
+
+
+@sio.event
+def sendMessage(sid, message):
+
+    mess = Message(
+        author=message['userId'],
+        text=message.get('message', None)
+    )
+    chat = ChatRoom.objects.filter(id=message['room']).first()
+
+    data = message.get('image', False)
+    if data:
+        path = f'static/images/chats/{curr_user.id}/'
+        index = get_count_of_files(path)
+        file_name = 'profile_photo' + f'_{index + 1}.' + data.name.split('.')[1]
+
+        data_file = data.read()
+        add_files_in_folder(path=path, files={file_name: data_file})
+    mess.save()
+
+    chat.add_message(mess)
+
+    data = MessageSerializers(mess).data
+    author = MyUser.objects.get(id=data['author'])
+    data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+    data['author'] = author.username
+    data['author_id'] = author.id
+
+    sio.emit('my_response', {'data': data}, room=sid)
 
 
 @sio.event
@@ -133,7 +194,7 @@ def my_broadcast_event(sid, message):
             new_message.message_images = str(files)
         new_message.save()
 
-        sio.emit('my_response', MessageSerializers(new_message).data)
+        sio.emit('response', MessageSerializers(new_message).data)
     except BaseException as err:
         logging.warning(err)
 
@@ -158,7 +219,7 @@ def join(sid, message):
         chat.save()
 
         sio.enter_room(sid, message['room'])
-        sio.emit('my_response', {'data': 'Entered room: ' + message['room']},
+        sio.emit('response', {'data': 'Entered room: ' + message['room']},
                  room=sid)
     except BaseException as err:
         logging.warning(err)
@@ -169,7 +230,7 @@ def leave(sid, message):
     try:
         print([*locals(), 5])
         sio.leave_room(sid, message['room'])
-        sio.emit('my_response', {'data': 'Left room: ' + message['room']},
+        sio.emit('response', {'data': 'Left room: ' + message['room']},
                  room=sid)
     except BaseException as err:
         logging.warning(err)
@@ -179,7 +240,7 @@ def leave(sid, message):
 def close_room(sid, message):
     try:
         print([*locals(), 6])
-        sio.emit('my_response', {'data': 'Room ' + message['room'] + ' is closing.'}, room=message['room'])
+        sio.emit('response', {'data': 'Room ' + message['room'] + ' is closing.'}, room=message['room'])
         sio.close_room(message['room'])
     except BaseException as err:
         logging.warning(err)
@@ -189,7 +250,7 @@ def close_room(sid, message):
 def my_room_event(sid, message):
     try:
         print([*locals(), 7])
-        sio.emit('my_response', {'data': message['data']}, room=message['room'])
+        sio.emit('response', {'data': message['data']}, room=message['room'])
     except BaseException as err:
         logging.warning(err)
 
@@ -206,8 +267,7 @@ def disconnect_request(sid):
 @sio.event
 def connect(sid, environ):
     try:
-        print([*locals(), 9])
-        sio.emit('my_response', {'data': 'Connected', 'count': 0}, room=sid)
+        sio.emit({'resultCode': 0, 'messages': 'connect', 'data': {'room': sid}})
     except BaseException as err:
         logging.warning(err)
 

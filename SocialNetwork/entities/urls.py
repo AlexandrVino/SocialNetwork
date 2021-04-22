@@ -18,6 +18,6 @@ urlpatterns = [
     path('profile/post', ProfileView.as_view(request_type='add_new_post')),
     path('profile/post/<int:post_id>', ProfileView.as_view(request_type='add_new_post')),
 
-    path('users', ProfileView.as_view(request_type='get_users'))
+    path('profile/users', ProfileView.as_view(request_type='get_users'))
 
 ]
