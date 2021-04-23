@@ -2,9 +2,6 @@ from django.urls import path
 from entities.views import *
 
 urlpatterns = [
-    path('auth/me', AuthenticationView.as_view()),
-    path('auth/login', AuthenticationView.as_view(request_type='login')),
-    path('auth/reg', AuthenticationView.as_view(request_type='registration')),
 
     path('profile', ProfileView.as_view(request_type='edit_profile_data')),
     path('profile/<int:user_id>', ProfileView.as_view()),

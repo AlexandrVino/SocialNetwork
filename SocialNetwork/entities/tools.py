@@ -1,4 +1,3 @@
-from django.http import JsonResponse, HttpResponse
 import os
 from django.core.cache import cache
 import logging
