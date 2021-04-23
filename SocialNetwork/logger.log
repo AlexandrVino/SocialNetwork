@@ -156,3 +156,4 @@ AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse`
 2021-04-23 14:48:33,842 DEBUG asyncio Using proactor: IocpProactor
 2021-04-23 14:48:48,578 DEBUG asyncio Using proactor: IocpProactor
 2021-04-23 14:49:00,808 DEBUG asyncio Using proactor: IocpProactor
+2021-04-23 15:24:49,059 DEBUG asyncio Using proactor: IocpProactor
