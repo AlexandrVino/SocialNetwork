@@ -1,1 +1,1 @@
-web: gunicorn SocialNetwork.wsgi --log-file -
+web: python SocialNetwork.manage.py

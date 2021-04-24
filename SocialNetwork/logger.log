@@ -304,3 +304,5 @@ KeyError: 'headers'
 2021-04-24 22:41:38,416 DEBUG asyncio Using proactor: IocpProactor
 2021-04-24 22:48:59,950 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
 2021-04-24 22:48:59,950 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:55:14,615 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:55:14,616 DEBUG asyncio Using proactor: IocpProactor

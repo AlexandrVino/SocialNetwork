@@ -153,6 +153,7 @@ def sendMessage(sid, message):
 
     data = MessageSerializers(mess).data
     author = MyUser.objects.get(id=data['author'])
+    print(SOCKETSERVERSESSION)
     for user_sess in SOCKETSERVERSESSION:
         if user_sess['userId'] == author.id:
             user_sess['sid'] = sid
