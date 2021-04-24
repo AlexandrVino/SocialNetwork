@@ -20,6 +20,6 @@ import SocialNetwork.settings as settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('entities.urls'), {'document_root': settings.STATICFILES_DIRS}),
-    path('auth/', include('auth.urls'), {'document_root': settings.STATICFILES_DIRS}),
-    path('chats/', include('socketio_app.urls'))
+    path('auth/', include('authentication.urls'), {'document_root': settings.STATICFILES_DIRS}),
+    path('chats', include('socketio_app.urls'))
 ]

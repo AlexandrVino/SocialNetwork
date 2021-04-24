@@ -1,159 +1,306 @@
-2021-04-21 12:20:10,417 WARNING django.request Not Found: /profile/users
-2021-04-21 12:21:12,540 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\urls.py changed, reloading.
-2021-04-21 12:21:12,540 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:23:10,093 WARNING django.request Not Found: /profile/follow/[object Object]
-2021-04-21 12:23:11,367 WARNING django.request Not Found: /profile/follow/[object Object]
-2021-04-21 12:26:00,018 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-21 12:26:00,018 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:27:05,571 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-21 12:27:05,571 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:28:33,845 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-21 12:28:33,845 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:32:07,887 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:32:07,887 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:32:37,420 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:32:37,421 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:35:00,415 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:35:00,416 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:47:36,838 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:47:36,839 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:48:24,657 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:48:24,658 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:49:19,208 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:49:19,209 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:49:37,129 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:49:37,129 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 12:50:21,704 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-21 12:50:21,704 DEBUG asyncio Using proactor: IocpProactor
-2021-04-21 21:52:26,319 WARNING django.request Not Found: /
-2021-04-22 22:45:02,052 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 22:45:02,063 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 22:45:23,367 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 22:45:23,367 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 22:45:31,253 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 22:45:31,254 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 22:47:20,316 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 22:47:20,318 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 22:56:40,367 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 22:56:40,367 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 22:59:46,736 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 22:59:46,737 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:03:09,047 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:03:09,048 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:07:15,784 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:07:15,785 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:10:23,954 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:10:23,957 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:10:29,693 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-22 23:10:29,694 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:13:19,053 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:13:19,054 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:14:49,141 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:14:49,141 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:14:54,463 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:14:54,464 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:15:21,998 WARNING root Field 'id' expected a number but got 'None]'.
-2021-04-22 23:16:02,347 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:16:02,347 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:16:04,943 WARNING root Field 'id' expected a number but got 'None]'.
-2021-04-22 23:16:21,495 WARNING root Field 'id' expected a number but got 'None]'.
-2021-04-22 23:19:20,652 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
-2021-04-22 23:19:20,653 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:19:24,114 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:20:29,337 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
-2021-04-22 23:20:29,337 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:20:43,762 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:20:43,763 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:21:42,808 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:21:42,809 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:22:16,051 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
-2021-04-22 23:22:16,051 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:22:49,315 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
-2021-04-22 23:22:49,315 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:24:13,566 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:24:13,567 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:24:47,027 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:24:47,028 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:28:24,346 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:28:24,346 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:28:34,445 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:28:34,446 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:31:09,536 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:31:09,537 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:36:23,734 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:36:23,735 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:37:38,308 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:37:38,308 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:38:59,235 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
-2021-04-22 23:38:59,235 DEBUG asyncio Using proactor: IocpProactor
-2021-04-22 23:53:37,335 WARNING django.request Not Found: /profile/follow/[object Object]
-2021-04-22 23:53:39,863 WARNING django.request Not Found: /profile/follow/[object Object]
-2021-04-23 13:32:56,130 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 13:34:00,648 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\urls.py changed, reloading.
-2021-04-23 13:34:00,648 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 13:36:42,318 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 13:36:42,318 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 13:37:15,454 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 13:37:15,455 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 13:37:23,251 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\urls.py changed, reloading.
-2021-04-23 13:37:23,252 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 13:42:57,307 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 13:42:57,308 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:00:26,829 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 14:00:26,830 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:01:17,226 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 14:01:17,226 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:08:12,231 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 14:08:12,231 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:16:27,244 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 14:16:27,246 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:30:39,442 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 14:30:39,443 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:32:07,326 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\urls.py changed, reloading.
-2021-04-23 14:32:07,326 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:32:39,527 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\urls.py changed, reloading.
-2021-04-23 14:32:39,527 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:32:48,847 ERROR django.request Internal Server Error: /profile/posts/19
+2021-04-24 21:41:48,132 WARNING root 0
+2021-04-24 21:41:48,138 WARNING root 0
+2021-04-24 21:41:48,155 WARNING root 0
+2021-04-24 21:41:49,042 WARNING root 0
+2021-04-24 21:41:50,046 WARNING root 0
+2021-04-24 21:42:01,075 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:42:01,075 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:42:02,042 WARNING root 0
+2021-04-24 21:42:02,077 WARNING root 0
+2021-04-24 21:42:02,077 WARNING root 0
+2021-04-24 21:42:02,124 WARNING root 0
+2021-04-24 21:42:02,755 WARNING root 0
+2021-04-24 21:42:14,632 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:42:14,632 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:42:15,758 ERROR engineio.server message handler error
 Traceback (most recent call last):
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 511, in dispatch
-    self.response = self.finalize_response(request, response, *args, **kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 423, in finalize_response
-    assert isinstance(response, HttpResponseBase), (
-AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
-2021-04-23 14:32:48,903 ERROR django.request Internal Server Error: /profile/posts/19
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ[0]['headers']])
+KeyError: 0
+2021-04-24 21:42:15,779 ERROR engineio.server message handler error
 Traceback (most recent call last):
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 511, in dispatch
-    self.response = self.finalize_response(request, response, *args, **kwargs)
-  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 423, in finalize_response
-    assert isinstance(response, HttpResponseBase), (
-AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
-2021-04-23 14:33:30,070 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
-2021-04-23 14:33:30,071 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:36:46,512 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\urls.py changed, reloading.
-2021-04-23 14:36:46,512 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:40:37,558 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:46:14,681 WARNING django.request Not Found: /auth/me
-2021-04-23 14:46:49,027 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\urls.py changed, reloading.
-2021-04-23 14:46:49,027 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:47:03,623 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\urls.py changed, reloading.
-2021-04-23 14:47:03,624 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:48:33,842 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:48:48,578 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 14:49:00,808 DEBUG asyncio Using proactor: IocpProactor
-2021-04-23 15:24:49,059 DEBUG asyncio Using proactor: IocpProactor
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ[0]['headers']])
+KeyError: 0
+2021-04-24 21:42:16,058 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ[0]['headers']])
+KeyError: 0
+2021-04-24 21:42:16,072 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ[0]['headers']])
+KeyError: 0
+2021-04-24 21:42:16,094 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ[0]['headers']])
+KeyError: 0
+2021-04-24 21:42:21,390 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:42:21,391 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:42:22,352 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ['headers']])
+KeyError: 'headers'
+2021-04-24 21:42:22,942 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ['headers']])
+KeyError: 'headers'
+2021-04-24 21:42:22,974 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ['headers']])
+KeyError: 'headers'
+2021-04-24 21:42:23,078 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ['headers']])
+KeyError: 'headers'
+2021-04-24 21:42:23,084 ERROR engineio.server message handler error
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\engineio\server.py", line 596, in _trigger_event
+    return self.handlers[event](*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 740, in _handle_eio_message
+    self._handle_connect(eio_sid, pkt.namespace, pkt.data)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 636, in _handle_connect
+    success = self._trigger_event(
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\socketio\server.py", line 712, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 272, in connect
+    print([environ['headers']])
+KeyError: 'headers'
+2021-04-24 21:43:01,147 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:43:01,148 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:43:39,030 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:43:39,031 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:44:17,997 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:44:17,999 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:44:25,877 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:44:25,879 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:46:22,231 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:46:22,232 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:48:15,280 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:48:15,281 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:48:35,104 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:48:35,105 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:49:58,227 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:49:58,229 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:50:20,562 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:50:20,563 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:50:32,915 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:50:32,917 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:50:41,998 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:50:41,998 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:51:10,787 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:51:10,788 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:53:42,381 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:53:42,382 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:55:56,837 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:55:56,837 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:58:01,782 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:58:01,782 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 21:59:13,859 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 21:59:13,860 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:00:52,431 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:00:52,431 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:01:44,553 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:01:44,554 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:02:42,494 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:02:42,495 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:06:00,300 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:06:00,301 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:06:38,458 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:06:47,979 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:06:47,979 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:07:13,690 WARNING django.request Not Found: /
+2021-04-24 22:07:25,577 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:07:25,578 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:08:28,959 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:08:28,959 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:09:55,462 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:09:55,462 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:10:24,565 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:12:05,264 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:12:05,265 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:12:15,350 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:12:15,350 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:12:25,891 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:14:30,485 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:14:30,486 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:16:47,934 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:16:47,934 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:16:51,816 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:20:24,672 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:20:24,672 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:20:26,063 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:26,084 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:26,087 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:26,095 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:26,098 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:35,777 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:20:35,777 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:20:37,058 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:37,074 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:38,044 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:38,046 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:38,050 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:44,728 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:20:44,729 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:20:46,056 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:47,045 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:47,048 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:47,052 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:20:47,053 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:03,316 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:16,782 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:24:16,782 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:24:17,744 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:18,062 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:18,070 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:18,079 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:18,090 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:18,092 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:25,714 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:27,871 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:24:27,871 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:24:28,833 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:28,835 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:29,056 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:29,072 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:29,078 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:29,081 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:30,047 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:48,080 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:24:48,080 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:24:49,043 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:49,233 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:49,248 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:50,059 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:50,080 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:50,094 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:24:50,102 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:25:03,824 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:26:32,278 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:26:32,280 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:26:33,997 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:26:34,060 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:26:34,081 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:26:34,083 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:26:34,085 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:26:34,089 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:27:20,118 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:27:20,119 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:27:21,045 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:27:21,047 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:27:21,260 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:27:22,058 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:27:22,065 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:27:22,079 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:34,015 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:28:34,016 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:28:35,043 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:35,046 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:35,992 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:36,055 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:36,070 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:36,071 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:38,602 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:28:38,602 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:28:40,005 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:40,060 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:40,075 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:40,080 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:40,083 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:41,051 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:28:58,825 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:28:58,826 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:28:59,993 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:29:37,565 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:29:37,565 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:29:39,998 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:30:33,024 WARNING root Invalid token type. Token must be a <class 'bytes'>
+2021-04-24 22:34:30,556 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:34:30,557 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:39:17,900 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:39:17,901 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:39:22,085 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:39:22,085 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:41:38,415 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:41:38,416 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 22:48:59,950 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 22:48:59,950 DEBUG asyncio Using proactor: IocpProactor

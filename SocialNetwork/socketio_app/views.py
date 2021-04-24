@@ -20,6 +20,7 @@ basedir = os.path.dirname(os.path.realpath(__file__))
 sio = socketio.Server(async_mode=async_mode, cors_allowed_origins=['http://localhost:3000'])
 
 thread = None
+SOCKETSERVERSESSION = []
 
 
 class ChatsView(APIView):
@@ -56,17 +57,16 @@ class ChatsView(APIView):
                 resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': response_items})
                 return make_resp(resp)
             else:
-                global thread
-                if thread is None:
-                    thread = sio.start_background_task(background_thread)
+
                 curr_user = authenticate_user(request.headers['Token'])
                 chat = ChatRoom.objects.filter(id=args['room']).first()
+                sio.start_background_task(background_thread, request=request, chat=chat)
                 chat = ChatSerializers(chat).data
 
                 mess_ids = chat['messages']
                 arr = []
                 for mess in Message.objects.all()[::-1]:
-                    if len(arr) >= 50:
+                    if len(arr) >= 10:
                         break
                     if str(mess.id) in mess_ids.split(', '):
                         data = MessageSerializers(mess).data
@@ -98,23 +98,24 @@ class ChatsView(APIView):
                 return make_resp(resp)
 
         except BaseException as err:
+            print(err)
             logging.warning(err)
             return make_resp(JsonResponse({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
 
 
-class MyWebSocketServer(socketio.Server):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    def load_database(self):
-        pass
-
-    def save_changes(self):
-        pass
-
-
-def background_thread():
-    print([*locals(), 1])
+def background_thread(*args, **kwargs):
+    request = kwargs['request']
+    chat = kwargs['chat']
+    curr_user = authenticate_user(request.headers['Token'])
+    if curr_user:
+        if not any([curr_user.id == user_sess['userId'] for user_sess in SOCKETSERVERSESSION]):
+            SOCKETSERVERSESSION.append(
+                {
+                    'userId': curr_user.id,
+                    'sid': None,
+                    'chat': chat.id
+                }
+            )
     """Example of how to send server generated events to clients."""
     count = 0
     while True:
@@ -126,13 +127,12 @@ def background_thread():
 
 @sio.event
 def my_event(sid, message):
-    print([*locals(), 2])
+    print([locals(), 2])
     sio.emit('response', {'data': message['data']}, room=sid)
 
 
 @sio.event
 def sendMessage(sid, message):
-
     mess = Message(
         author=message['userId'],
         text=message.get('message', None)
@@ -153,11 +153,16 @@ def sendMessage(sid, message):
 
     data = MessageSerializers(mess).data
     author = MyUser.objects.get(id=data['author'])
-    data['photo'] = load_json_from_str(author.photos, 'photos')['large']
-    data['author'] = author.username
-    data['author_id'] = author.id
-
-    sio.emit('my_response', {'data': data}, room=sid)
+    for user_sess in SOCKETSERVERSESSION:
+        if user_sess['userId'] == author.id:
+            user_sess['sid'] = sid
+    for user_sess in SOCKETSERVERSESSION:
+        if user_sess['chat'] == chat.id:
+            if user_sess['sid'] is not None:
+                data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                data['author'] = author.username
+                data['author_id'] = author.id
+                sio.emit('responseSendMessage', {'data': data}, room=user_sess['sid'])
 
 
 @sio.event
@@ -201,15 +206,21 @@ def my_broadcast_event(sid, message):
 
 @sio.event
 def join(sid, message):
-    print([*locals(), 4])
     try:
-        curr_user = authenticate_user(message['Token'])
-        chat_id = message['chat_id']
+
+        curr_user = MyUser.objects.filter(id=message['userId']).first()
+        chat_id = message['room']
+
+        if curr_user:
+            for user_sess in SOCKETSERVERSESSION:
+                if user_sess['userId'] == curr_user.id:
+                    user_sess['sid'] = sid
 
         try:
-            chat = ChatRoom.objects.filter(author=chat_id).first()
+            chat = ChatRoom.objects.filter(id=int(chat_id)).first()
             assert chat
-            chat.users = ', '.join(chat.users.split(', ') + [str(curr_user.id)])
+            members = chat.users.split(', ')
+            chat.users = ', '.join(members + ([str(curr_user.id)] if str(curr_user.id) not in members else []))
 
         except AssertionError:
             chat = ChatRoom(
@@ -237,45 +248,19 @@ def leave(sid, message):
 
 
 @sio.event
-def close_room(sid, message):
-    try:
-        print([*locals(), 6])
-        sio.emit('response', {'data': 'Room ' + message['room'] + ' is closing.'}, room=message['room'])
-        sio.close_room(message['room'])
-    except BaseException as err:
-        logging.warning(err)
-
-
-@sio.event
-def my_room_event(sid, message):
-    try:
-        print([*locals(), 7])
-        sio.emit('response', {'data': message['data']}, room=message['room'])
-    except BaseException as err:
-        logging.warning(err)
-
-
-@sio.event
-def disconnect_request(sid):
-    try:
-        print([*locals(), 8])
-        sio.disconnect(sid)
-    except BaseException as err:
-        logging.warning(err)
-
-
-@sio.event
-def connect(sid, environ):
+def connect(sid, environ, *args):
     try:
         sio.emit({'resultCode': 0, 'messages': 'connect', 'data': {'room': sid}})
     except BaseException as err:
+        print(err)
         logging.warning(err)
 
 
 @sio.event
 def disconnect(sid):
     try:
-        print([sid, 10])
-        print('Client disconnected')
+        for user_sess in SOCKETSERVERSESSION:
+            if user_sess['sid'] == sid:
+                SOCKETSERVERSESSION.pop(SOCKETSERVERSESSION.index(user_sess))
     except BaseException as err:
         logging.warning(err)
