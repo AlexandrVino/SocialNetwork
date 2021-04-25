@@ -1,6 +1,3 @@
-# set async_mode to 'threading', 'eventlet', 'gevent' or 'gevent_uwsgi' to
-# force a mode else, the best mode is selected automatically from what's
-# installed
 import os
 
 from django.http import HttpResponse
@@ -45,14 +42,20 @@ class ChatsView(APIView):
                 for chat in response_items:
 
                     if len(chat['users'].split(', ')) == 2:
-
-                        chat['lastMessage'] = MessageSerializers(
-                            Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
                         user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
                                                          if int(us_id) != curr_user.id][0]).first()
-                        us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
-                        chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
-                        chat['lastMessage']['author'] = user.fullName
+                        if chat['messages']:
+
+                            chat['lastMessage'] = MessageSerializers(
+                                Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
+
+                            us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
+                            chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
+                            chat['lastMessage']['author'] = user.fullName
+                        else:
+                            chat['lastMessage'] = {}
+                            chat['lastMessage']['photo'] = load_json_from_str(user.photos, 'photos')['large']
+                            chat['lastMessage']['author'] = None
                         chat['title'] = user.fullName
                         chat['photo'] = load_json_from_str(user.photos, 'photos')['large']
                     else:
@@ -73,6 +76,7 @@ class ChatsView(APIView):
                 curr_user = authenticate_user(request.headers['Token'])
                 chat = ChatRoom.objects.filter(id=args['room']).first()
                 sio.start_background_task(background_thread, request=request, chat=chat)
+
                 if len(chat.users.split(', ')) == 2:
                     chat = ChatSerializers(chat).data
 
@@ -108,6 +112,7 @@ class ChatsView(APIView):
                     chat['users'] = arr
 
                     resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': chat})
+
                     return make_resp(resp, request.get_raw_uri())
                 else:
                     chat = ChatSerializers(chat).data
@@ -138,12 +143,13 @@ class ChatsView(APIView):
                             user_js['id'] = user_json['id']
                             arr += [user_js]
                     chat['users'] = arr
+                    chat['photo'] = chat['image']
 
                     resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': chat})
                     return make_resp(resp, request.get_raw_uri())
 
         except BaseException as err:
-            print(err)
+            print(err.args, err)
             logging.warning(err)
             return make_resp(JsonResponse({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}), request.get_raw_uri())
 
@@ -170,10 +176,9 @@ def background_thread(*args, **kwargs):
                  namespace='/test')
 
 
-@sio.event
-def sendMessage(sid, message):
+@sio.on('sendMessage')
+def send_message(sid, message):
 
-    print(sid, message)
     if message.get('room', None) is not None:
         chat = ChatRoom.objects.filter(id=message['room']).first()
         mess = Message(
@@ -203,7 +208,6 @@ def sendMessage(sid, message):
         data_file = data.read()
         add_files_in_folder(path=path, files={file_name: data_file})
         mess.save()
-    print(mess)
     chat.add_message(mess)
 
     data = MessageSerializers(mess).data
@@ -221,25 +225,37 @@ def sendMessage(sid, message):
                 sio.emit('responseSendMessage', {'data': data}, room=user_sess['sid'])
 
 
-@sio.event
-def removeMessage(sid, message):
+@sio.on('removeMessage')
+def remove_message(sid, message):
+
+    print(sid, message)
 
     chat = ChatRoom.objects.filter(id=message['room']).first()
     messages = chat.messages.split(', ')
-    try:
-        del messages[messages.index(message['id'])]
-        chat.messages = ', '.join(messages)
-        chat.save()
-    except IndexError:
-        pass
-
+    author = MyUser.objects.get(id=Message.objects.filter(id=message['id']).first().author)
     for user_sess in SOCKETSERVERSESSION:
         if user_sess['userId'] == author.id:
             user_sess['sid'] = sid
+    can_remove = False
+
+    for user_sess in SOCKETSERVERSESSION:
+        if user_sess['sid'] == sid:
+            try:
+                if user_sess['userId'] == author.id:
+                    can_remove = True
+                    del messages[messages.index(str(message['id']))]
+                    chat.messages = ', '.join(messages)
+                    chat.save()
+            except BaseException:
+                return
+    if can_remove:
+        for user_sess in SOCKETSERVERSESSION:
+            if user_sess['chat'] == chat.id:
+                sio.emit('responseRemoveMessage', {'message': 'Ok'}, room=sid)
 
 
-@sio.event
-def editMessage(sid, message):
+@sio.on('editMessage')
+def edit_message(sid, message):
 
     mess = Message.objects.filter(id=message['id']).first()
     mess.text = mess.text if message.get('message', None) is None else message.get('message', None)
@@ -297,7 +313,6 @@ def join(sid, message):
 @sio.event
 def leave(sid, message):
     try:
-        print([*locals(), 5])
         sio.leave_room(sid, message['room'])
         sio.emit('response', {'data': 'Left room: ' + message['room']},
                  room=sid)
@@ -310,7 +325,6 @@ def connect(sid, environ, *args):
     try:
         sio.emit({'resultCode': 0, 'messages': 'connect', 'data': {'room': sid}})
     except BaseException as err:
-        print(err)
         logging.warning(err)
 
 

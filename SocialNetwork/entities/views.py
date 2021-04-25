@@ -203,16 +203,18 @@ class FollowerView(APIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            curr_user = authenticate_user(request.headers['Token'])
+            curr_user = MyUser.objects.filter(id=kwargs['id']).first()
             followers = curr_user.followers.split(', ')
-            users = MyUser.objects.filter(id in followers).all()
+            users = list(filter(lambda user: str(user.id) in followers, MyUser.objects.all()))
+
             users = [MyUserSerializers(user).data for user in users]
             users_count = len(users)
 
             for user_json in users:
                 user_json['contacts'] = load_json_from_str(user_json['contacts'], 'contacts')
                 user_json['photos'] = load_json_from_str(user_json['photos'], 'photos')
-                user_json['name'] = user_json['fullName']
+                user_json['followed'] = True
+                user_json['name'] = user_json['username'] if not user_json['fullName'] else user_json['fullName']
 
             return make_resp(Response({'items': users, "totalCount": users_count, "error": None}),
                              request.get_raw_uri())

@@ -11,7 +11,7 @@ urlpatterns = [
     path('profile/friends', FriendView.as_view()),
     path('profile/friends/<int:user_id>', FriendView.as_view()),
 
-    path('profile/followers', FollowerView.as_view()),
+    path('profile/followers/<int:id>', FollowerView.as_view()),
     path('profile/follow/<int:user_id>', FollowerView.as_view()),
 
     path('profile/posts/<int:post_id>', PostsView.as_view()),
