@@ -306,3 +306,1098 @@ KeyError: 'headers'
 2021-04-24 22:48:59,950 DEBUG asyncio Using proactor: IocpProactor
 2021-04-24 22:55:14,615 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
 2021-04-24 22:55:14,616 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:11:34,767 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-24 23:11:34,767 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:12:45,878 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-24 23:12:45,878 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:13:31,364 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-24 23:13:31,365 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:13:47,557 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:13:56,033 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:14:25,433 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\serializers.py changed, reloading.
+2021-04-24 23:14:25,434 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:17:03,881 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 23:17:03,882 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:19:29,738 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 23:19:29,739 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:19:38,264 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-24 23:19:38,264 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:35:33,381 WARNING django.request Not Found: /
+2021-04-24 23:35:33,671 WARNING django.request Not Found: /apple-touch-icon.png
+2021-04-24 23:35:34,081 WARNING django.request Not Found: /favicon.ico
+2021-04-24 23:35:34,420 WARNING django.request Not Found: /apple-touch-icon-precomposed.png
+2021-04-24 23:35:34,985 WARNING django.request Not Found: /
+2021-04-24 23:35:35,275 WARNING django.request Not Found: /apple-touch-icon.png
+2021-04-24 23:35:35,692 WARNING django.request Not Found: /apple-touch-icon-precomposed.png
+2021-04-24 23:35:35,717 WARNING django.request Not Found: /favicon.ico
+2021-04-24 23:35:42,532 WARNING django.request Not Found: /
+2021-04-24 23:35:42,952 WARNING django.request Not Found: /favicon.ico
+2021-04-24 23:38:11,361 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-24 23:38:11,361 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:38:34,151 WARNING django.request Not Found: /
+2021-04-24 23:43:33,928 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-24 23:43:33,929 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:43:41,854 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-24 23:43:41,855 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:43:50,909 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-24 23:43:50,909 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:45:11,408 WARNING django.request Not Found: /
+2021-04-24 23:45:11,815 WARNING django.request Not Found: /favicon.ico
+2021-04-24 23:45:12,117 WARNING django.request Not Found: /apple-touch-icon-precomposed.png
+2021-04-24 23:45:12,138 WARNING django.request Not Found: /apple-touch-icon.png
+2021-04-24 23:51:28,313 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-24 23:51:28,313 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:53:12,704 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    ret = template.render(context, request=renderer_context['request'])
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 106, in render
+    url = self.url(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 103, in url
+    return self.handle_simple(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 147, in url
+    return self._url(self.stored_name, name, force)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 126, in _url
+    hashed_name = hashed_name_func(*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 417, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'rest_framework/css/bootstrap.min.css'
+2021-04-24 23:53:13,172 WARNING django.request Not Found: /favicon.ico
+2021-04-24 23:54:22,521 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-24 23:54:22,521 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:54:45,903 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-24 23:54:45,904 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:54:55,794 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-24 23:54:55,795 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:55:42,446 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-24 23:55:42,447 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:56:50,049 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-24 23:56:50,050 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:58:07,598 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-24 23:58:07,599 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:58:55,927 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-24 23:58:55,928 DEBUG asyncio Using proactor: IocpProactor
+2021-04-24 23:59:27,632 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-24 23:59:27,637 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:00:01,883 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:00:01,884 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:00:13,068 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:00:13,068 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:00:26,343 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:00:26,343 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:00:29,855 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:00:29,855 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:00:41,057 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:00:41,057 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:11:44,543 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:11:44,544 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:12:57,727 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:12:57,728 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:13:33,256 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:13:33,256 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:14:05,499 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:14:05,500 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:14:12,546 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    ret = template.render(context, request=renderer_context['request'])
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 106, in render
+    url = self.url(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 103, in url
+    return self.handle_simple(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 147, in url
+    return self._url(self.stored_name, name, force)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 126, in _url
+    hashed_name = hashed_name_func(*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 417, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'rest_framework/css/bootstrap.min.css'
+2021-04-25 00:14:12,944 WARNING django.request Not Found: /favicon.ico
+2021-04-25 00:15:36,502 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:15:36,502 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:15:58,660 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:15:58,660 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:16:45,920 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:16:45,921 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:16:48,299 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:16:48,299 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:16:53,895 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:16:53,895 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:16:56,188 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:16:56,189 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:17:06,362 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:17:06,363 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:17:18,542 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:17:18,543 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:17:24,272 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:17:24,273 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:17:31,053 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:17:31,053 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:17:42,206 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:17:42,206 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:17:51,217 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:17:51,218 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:18:01,362 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:18:01,363 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:18:11,479 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:18:11,479 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:18:16,018 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:18:16,018 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:18:26,003 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:18:26,004 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:18:40,477 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:18:40,477 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:19:21,341 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:19:21,341 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:19:44,633 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:19:44,633 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:20:52,695 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:20:52,696 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:21:32,241 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:21:32,242 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:23:18,302 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:23:18,302 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:23:46,056 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:23:46,056 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:23:56,245 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-25 00:23:56,245 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:26:18,241 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:26:18,242 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:26:45,914 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:26:45,915 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:27:55,267 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:27:55,268 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:29:32,770 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:32,773 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:37,517 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:37,517 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:41,707 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:41,708 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:46,999 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:46,999 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:29:58,432 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 00:29:58,432 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:30:36,514 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:30:36,515 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:30:46,476 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:30:46,476 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:31:57,448 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 122, in options
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:05,535 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 122, in options
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:22,920 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 00:32:22,921 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:32:27,917 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 122, in options
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:32,873 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:32,873 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:37,902 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:37,902 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:40,685 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-25 00:32:40,686 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:32:48,939 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:48,994 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:52,586 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:52,638 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:59,557 WARNING root make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:32:59,593 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp)
+TypeError: make_resp() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+TypeError: make_resp() missing 1 required positional argument: 'request'
+2021-04-25 00:33:56,445 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 00:33:56,446 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:34:04,513 WARNING root 'Request' object has no attribute 'get_raw_url'
+2021-04-25 00:34:04,567 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'get_raw_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 134, in get
+    return make_resp(resp, request)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py", line 13, in make_resp
+    response["Access-Control-Allow-Origin"] = request.get_raw_url()
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'get_raw_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'get_raw_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 140, in get
+    return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}), request)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py", line 13, in make_resp
+    response["Access-Control-Allow-Origin"] = request.get_raw_url()
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'get_raw_url'
+2021-04-25 00:34:52,814 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:34:52,815 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:35:11,721 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:35:11,722 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:37:01,761 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:37:01,762 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:37:24,155 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:37:24,156 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:37:44,189 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:37:44,189 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:37:47,728 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 122, in options
+    return make_resp(resp, request)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py", line 13, in make_resp
+    url = response.get_raw_uri().split('/')[:3]
+AttributeError: 'Response' object has no attribute 'get_raw_uri'
+2021-04-25 00:37:52,167 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:37:52,167 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:38:38,630 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 00:38:38,630 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:38:42,008 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 122, in options
+    return make_resp(resp, request.get_raw_uri())
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py", line 13, in make_resp
+    url = request.get_raw_uri().split('/')[:3]
+NameError: name 'request' is not defined
+2021-04-25 00:38:52,157 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:38:52,158 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:39:31,755 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 00:39:31,756 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:39:59,592 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:39:59,593 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:40:27,385 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:40:27,386 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:41:01,698 ERROR django.request Internal Server Error: /profile/19
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'split'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py", line 308, in options
+    return make_resp(resp, request)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py", line 13, in make_resp
+    url = url.split('/')[:3]
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'split'
+2021-04-25 00:41:02,080 ERROR django.request Internal Server Error: /profile/users
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'split'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py", line 145, in options
+    return make_resp(resp, request)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py", line 13, in make_resp
+    url = url.split('/')[:3]
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'split'
+2021-04-25 00:42:14,265 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 00:42:14,266 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:42:30,916 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:42:30,917 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:43:03,094 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 00:43:03,094 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:43:28,548 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 00:43:28,549 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:43:59,387 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:43:59,388 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:44:29,438 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:44:29,438 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:44:43,833 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:44:43,833 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:44:46,029 WARNING root Not enough segments
+2021-04-25 00:45:28,067 WARNING root Not enough segments
+2021-04-25 00:45:43,749 WARNING root Not enough segments
+2021-04-25 00:46:44,846 WARNING root Not enough segments
+2021-04-25 00:47:28,977 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:47:28,977 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:47:32,415 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 00:47:32,416 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 00:56:27,189 WARNING django.request Not Found: /
+2021-04-25 00:56:27,621 WARNING django.request Not Found: /favicon.ico
+2021-04-25 00:56:27,939 WARNING django.request Not Found: /apple-touch-icon-precomposed.png
+2021-04-25 00:56:27,951 WARNING django.request Not Found: /apple-touch-icon.png
+2021-04-25 01:00:40,674 WARNING django.request Not Found: /
+2021-04-25 01:00:41,191 WARNING django.request Not Found: /favicon.ico
+2021-04-25 10:31:54,286 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 10:32:51,147 WARNING django.request Not Found: /
+2021-04-25 10:32:51,673 WARNING django.request Not Found: /favicon.ico
+2021-04-25 12:36:27,271 WARNING django.request Not Found: /profile/follow/[object Object]
+2021-04-25 12:36:27,296 WARNING django.request Not Found: /profile/follow/[object Object]
+2021-04-25 12:42:38,645 WARNING root name 'user' is not defined
+2021-04-25 12:42:38,691 WARNING root name 'user' is not defined
+2021-04-25 12:42:56,178 WARNING root name 'user' is not defined
+2021-04-25 12:44:14,455 WARNING root name 'user' is not defined
+2021-04-25 12:44:14,518 WARNING root name 'user' is not defined
+2021-04-25 12:44:25,994 WARNING root name 'user' is not defined
+2021-04-25 12:44:45,998 WARNING root name 'user' is not defined
+2021-04-25 12:46:26,521 WARNING root name 'user' is not defined
+2021-04-25 12:46:28,317 WARNING root name 'user' is not defined
+2021-04-25 12:47:15,871 WARNING root name 'user' is not defined
+2021-04-25 12:47:55,011 WARNING root name 'user' is not defined
+2021-04-25 12:49:10,230 WARNING django.request Not Found: /
+2021-04-25 12:49:10,324 WARNING django.request Not Found: /favicon.ico
+2021-04-25 12:50:22,362 WARNING django.request Not Found: /
+2021-04-25 12:50:27,651 WARNING root name 'user' is not defined
+2021-04-25 12:59:57,238 WARNING root name 'user' is not defined
+2021-04-25 13:01:19,002 WARNING root name 'user' is not defined
+2021-04-25 13:02:22,018 WARNING root name 'user' is not defined
+2021-04-25 13:02:50,437 WARNING root name 'user' is not defined
+2021-04-25 13:03:20,646 WARNING root name 'user' is not defined
+2021-04-25 14:59:32,225 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 14:59:32,226 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 14:59:52,473 WARNING root name 'user' is not defined
+2021-04-25 14:59:57,926 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 14:59:57,942 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:00:02,002 WARNING root name 'user' is not defined
+2021-04-25 15:00:20,248 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 15:00:20,248 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:07:31,594 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:07:31,594 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:07:35,871 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:07:35,872 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:08:26,387 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:08:26,388 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:08:37,440 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:08:37,440 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:24:37,486 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:24:37,486 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:28:44,966 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:28:44,966 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:43:17,835 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:43:17,836 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:43:51,300 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-25 15:43:51,301 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:53:50,100 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:53:50,101 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:54:22,274 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:54:22,274 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:54:57,811 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:54:57,811 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:55:15,732 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:55:15,732 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:56:04,526 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:56:04,527 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:56:31,390 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:56:31,391 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:56:35,936 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-25 15:56:35,937 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:57:26,947 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-25 15:57:26,948 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:58:02,204 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:58:02,204 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:58:37,816 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 15:58:37,816 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 15:59:33,378 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-25 15:59:33,383 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:01:36,414 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-25 16:01:36,414 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:01:50,912 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-25 16:01:50,912 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:01:55,299 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-25 16:01:55,300 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:04:35,002 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\models.py changed, reloading.
+2021-04-25 16:04:35,003 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:15:55,065 WARNING root no such column: socketio_app_message.read_by
+2021-04-25 16:15:55,083 WARNING root no such column: socketio_app_message.read_by
+2021-04-25 16:15:58,708 WARNING root no such column: socketio_app_message.read_by
+2021-04-25 16:16:13,152 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:16:44,060 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:16:51,638 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 16:59:29,684 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 16:59:29,684 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 17:06:08,558 WARNING root 'messages'
+2021-04-25 17:06:17,459 WARNING root 'messages'
+2021-04-25 17:06:19,721 WARNING root 'messages'
+2021-04-25 17:06:19,726 WARNING root 'messages'
+2021-04-25 17:07:00,655 WARNING root 'messages'
+2021-04-25 17:07:00,664 WARNING root 'messages'
+2021-04-25 17:07:02,131 WARNING root 'messages'
+2021-04-25 17:07:07,028 WARNING root 'messages'
+2021-04-25 17:07:07,045 WARNING root 'messages'
+2021-04-25 17:07:07,060 WARNING root 'messages'
+2021-04-25 17:07:30,037 WARNING root 'messages'
+2021-04-25 17:07:30,066 WARNING root 'messages'
+2021-04-25 17:07:31,522 WARNING root 'messages'
+2021-04-25 17:07:52,765 WARNING root 'messages'
+2021-04-25 17:07:52,780 WARNING root 'messages'
+2021-04-25 17:07:52,792 WARNING root 'messages'
+2021-04-25 17:07:57,941 WARNING root 'token'
+2021-04-25 17:08:21,304 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 17:08:21,304 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 17:08:26,029 ERROR django.request Internal Server Error: /chats
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 60, in get
+    Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
+KeyError: 'messages'
+2021-04-25 17:08:26,062 ERROR django.request Internal Server Error: /chats
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py", line 60, in get
+    Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
+KeyError: 'messages'
+2021-04-25 17:08:35,849 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 17:08:35,850 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 17:09:13,411 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 17:09:13,412 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 17:12:51,609 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 17:12:51,611 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:01:34,181 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 18:01:34,182 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:18:13,519 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 18:18:13,520 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:19:11,265 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 18:19:11,266 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:19:50,415 WARNING django.request Not Found: /favicon.ico
+2021-04-25 18:23:54,251 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 18:23:54,251 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:25:11,579 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 18:25:11,580 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:25:20,474 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 18:25:20,475 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:25:24,105 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 129, in get
+    user.photos = user.photos.replase('images', 'docs')
+AttributeError: 'str' object has no attribute 'replase'
+2021-04-25 18:25:38,099 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 129, in get
+    user.photos = user.photos.replase('images', 'docs')
+AttributeError: 'str' object has no attribute 'replase'
+2021-04-25 18:25:51,479 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 18:25:51,480 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:26:09,248 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 18:26:09,249 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:26:43,805 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 18:26:43,806 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:27:05,808 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 18:27:05,809 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:27:43,433 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 18:27:43,434 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:30:35,334 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 18:30:35,334 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:31:02,252 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 18:31:02,252 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:32:10,504 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 18:32:10,504 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:32:42,545 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 18:32:42,545 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:40:55,141 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 18:40:55,142 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:41:56,668 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 18:41:56,669 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 18:42:50,821 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-25 18:42:50,822 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 19:28:37,226 WARNING root [WinError 3] Системе не удается найти указанный путь: 'static/images/users/21'
+2021-04-25 19:29:21,555 WARNING root unsupported operand type(s) for +: 'NoneType' and 'int'
+2021-04-25 19:29:37,632 WARNING root unsupported operand type(s) for +: 'NoneType' and 'int'
+2021-04-25 19:31:20,798 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-25 19:31:20,799 DEBUG asyncio Using proactor: IocpProactor
+2021-04-25 19:31:48,468 WARNING root MyUser matching query does not exist.
+2021-04-25 21:17:31,417 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-25 21:17:31,418 DEBUG asyncio Using proactor: IocpProactor

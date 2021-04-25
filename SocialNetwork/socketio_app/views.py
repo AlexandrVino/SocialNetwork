@@ -19,7 +19,6 @@ async_mode = 'eventlet'
 basedir = os.path.dirname(os.path.realpath(__file__))
 sio = socketio.Server(async_mode=async_mode, cors_allowed_origins=['http://localhost:3000'])
 
-thread = None
 SOCKETSERVERSESSION = []
 
 
@@ -29,7 +28,7 @@ class ChatsView(APIView):
 
     def options(self, request, *args, **kwargs):
         resp = JsonResponse({})
-        return make_resp(resp)
+        return make_resp(resp, request.get_raw_uri())
 
     def get(self, request, *args, **kwargs):
         try:
@@ -44,63 +43,109 @@ class ChatsView(APIView):
                 chats = new_chats
                 response_items = [ChatSerializers(chat).data for chat in chats]
                 for chat in response_items:
-                    chat['lastMessage'] = MessageSerializers(
-                        Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
-                    user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
-                                                     if int(us_id) != curr_user.id][0]).first()
-                    us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
-                    chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
-                    chat['lastMessage']['author'] = user.fullName
-                    chat['title'] = user.fullName
-                    chat['photo'] = load_json_from_str(user.photos, 'photos')['large']
+
+                    if len(chat['users'].split(', ')) == 2:
+
+                        chat['lastMessage'] = MessageSerializers(
+                            Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
+                        user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
+                                                         if int(us_id) != curr_user.id][0]).first()
+                        us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
+                        chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
+                        chat['lastMessage']['author'] = user.fullName
+                        chat['title'] = user.fullName
+                        chat['photo'] = load_json_from_str(user.photos, 'photos')['large']
+                    else:
+                        chat['lastMessage'] = MessageSerializers(
+                            Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
+                        user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
+                                                         if int(us_id) != curr_user.id][0]).first()
+                        us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
+                        chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
+                        chat['lastMessage']['author'] = user.fullName
+                        chat['photo'] = None
+                    del chat['messages']
 
                 resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': response_items})
-                return make_resp(resp)
+                return make_resp(resp, request.get_raw_uri())
             else:
 
                 curr_user = authenticate_user(request.headers['Token'])
                 chat = ChatRoom.objects.filter(id=args['room']).first()
                 sio.start_background_task(background_thread, request=request, chat=chat)
-                chat = ChatSerializers(chat).data
+                if len(chat.users.split(', ')) == 2:
+                    chat = ChatSerializers(chat).data
 
-                mess_ids = chat['messages']
-                arr = []
-                for mess in Message.objects.all()[::-1]:
-                    if len(arr) >= 10:
-                        break
-                    if str(mess.id) in mess_ids.split(', '):
-                        data = MessageSerializers(mess).data
-                        author = MyUser.objects.get(id=data['author'])
-                        data['photo'] = load_json_from_str(author.photos, 'photos')['large']
-                        data['author'] = author.username
-                        data['author_id'] = author.id
-                        arr += [data]
-                chat['messages'] = arr[::-1]
-                user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
-                                                 if int(us_id) != curr_user.id][0]).first()
-                chat['title'] = user.fullName
+                    mess_ids = chat['messages']
+                    arr = []
+                    for mess in Message.objects.all()[::-1]:
+                        if len(arr) >= 10:
+                            break
+                        if str(mess.id) in mess_ids.split(', '):
+                            data = MessageSerializers(mess).data
+                            author = MyUser.objects.get(id=data['author'])
+                            data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                            data['author'] = author.username
+                            data['author_id'] = author.id
+                            arr += [data]
+                    chat['messages'] = arr[::-1]
+                    user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
+                                                     if int(us_id) != curr_user.id][0]).first()
+                    chat['title'] = user.fullName
 
-                arr = []
-                users = MyUser.objects.all()
-                users = [MyUserSerializers(user).data for user in users]
+                    arr = []
+                    users = MyUser.objects.all()
+                    users = [MyUserSerializers(user).data for user in users]
 
-                for user_json in users:
-                    user_js = {}
-                    if str(user_json['id']) in chat['users'].split(', '):
-                        user_js['photo'] = load_json_from_str(user_json['photos'], 'photos')['large']
-                        user_js['fullName'] = user_json['username'] if not user_json['fullName'] \
-                            else user_json['fullName']
-                        user_js['id'] = user_json['id']
-                        arr += [user_js]
-                chat['users'] = arr
+                    for user_json in users:
+                        user_js = {}
+                        if str(user_json['id']) in chat['users'].split(', '):
+                            user_js['photo'] = load_json_from_str(user_json['photos'], 'photos')['large']
+                            user_js['fullName'] = user_json['username'] if not user_json['fullName'] \
+                                else user_json['fullName']
+                            user_js['id'] = user_json['id']
+                            arr += [user_js]
+                    chat['users'] = arr
 
-                resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': chat})
-                return make_resp(resp)
+                    resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': chat})
+                    return make_resp(resp, request.get_raw_uri())
+                else:
+                    chat = ChatSerializers(chat).data
+                    mess_ids = chat['messages']
+                    arr = []
+                    for mess in Message.objects.all()[::-1]:
+                        if len(arr) >= 10:
+                            break
+                        if str(mess.id) in mess_ids.split(', '):
+                            data = MessageSerializers(mess).data
+                            author = MyUser.objects.get(id=data['author'])
+                            data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                            data['author'] = author.username
+                            data['author_id'] = author.id
+                            arr += [data]
+                    chat['messages'] = arr[::-1]
+
+                    arr = []
+                    users = MyUser.objects.all()
+                    users = [MyUserSerializers(user).data for user in users]
+
+                    for user_json in users:
+                        user_js = {}
+                        if str(user_json['id']) in chat['users'].split(', '):
+                            user_js['photo'] = load_json_from_str(user_json['photos'], 'photos')['large']
+                            user_js['fullName'] = user_json['username'] if not user_json['fullName'] \
+                                else user_json['fullName']
+                            user_js['id'] = user_json['id']
+                            arr += [user_js]
+                    chat['users'] = arr
+
+                    resp = JsonResponse({'resultCode': 0, 'messages': [], 'items': chat})
+                    return make_resp(resp, request.get_raw_uri())
 
         except BaseException as err:
             print(err)
             logging.warning(err)
-            return make_resp(JsonResponse({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+            return make_resp(JsonResponse({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}), request.get_raw_uri())
 
 
 def background_thread(*args, **kwargs):
@@ -126,34 +171,44 @@ def background_thread(*args, **kwargs):
 
 
 @sio.event
-def my_event(sid, message):
-    print([locals(), 2])
-    sio.emit('response', {'data': message['data']}, room=sid)
-
-
-@sio.event
 def sendMessage(sid, message):
-    mess = Message(
-        author=message['userId'],
-        text=message.get('message', None)
-    )
-    chat = ChatRoom.objects.filter(id=message['room']).first()
 
+    print(sid, message)
+    if message.get('room', None) is not None:
+        chat = ChatRoom.objects.filter(id=message['room']).first()
+        mess = Message(
+            author=message['userId'],
+            text=message.get('message', None)
+        )
+    else:
+
+        message_users = ', '.join([str(message['from']), str(message['to'])])
+        chat = ChatRoom.objects.filter(users=message_users).first()
+        if not chat:
+            chat = ChatRoom(
+                users=message_users,
+                messages=''
+            )
+        mess = Message(
+            author=message['from'],
+            text=message.get('message', None)
+        )
+    mess.save()
     data = message.get('image', False)
     if data:
-        path = f'static/images/chats/{curr_user.id}/'
+        path = f'static/docs/chats/{curr_user.id}/'
         index = get_count_of_files(path)
         file_name = 'profile_photo' + f'_{index + 1}.' + data.name.split('.')[1]
 
         data_file = data.read()
         add_files_in_folder(path=path, files={file_name: data_file})
-    mess.save()
-
+        mess.save()
+    print(mess)
     chat.add_message(mess)
 
     data = MessageSerializers(mess).data
     author = MyUser.objects.get(id=data['author'])
-    print(SOCKETSERVERSESSION)
+
     for user_sess in SOCKETSERVERSESSION:
         if user_sess['userId'] == author.id:
             user_sess['sid'] = sid
@@ -167,42 +222,43 @@ def sendMessage(sid, message):
 
 
 @sio.event
-def my_broadcast_event(sid, message):
+def removeMessage(sid, message):
+
+    chat = ChatRoom.objects.filter(id=message['room']).first()
+    messages = chat.messages.split(', ')
     try:
-        curr_user = authenticate_user(message['Token'])
-        chat_id = message['chat_id']
-        try:
-            chat = ChatRoom.objects.filter(author=chat_id).first()
-            assert chat
+        del messages[messages.index(message['id'])]
+        chat.messages = ', '.join(messages)
+        chat.save()
+    except IndexError:
+        pass
 
-        except AssertionError:
-            chat = ChatRoom(
-                users=message['participants']
-            )
+    for user_sess in SOCKETSERVERSESSION:
+        if user_sess['userId'] == author.id:
+            user_sess['sid'] = sid
 
-        new_message = Message(
-            author=curr_user.id,
-            message_text=message['data'],
-            message_images=message['images']
-        )
 
-        chat.add_message(new_message)
+@sio.event
+def editMessage(sid, message):
 
-        if message.get('images', None) is not None:
-            path = f'static/images/chats/{chat.id}/'
-            files = {'images': []}
-            for key, img_bytes in message['images'].items():
-                index = get_count_of_files(path)
-                file_name = 'message' + f'_{index + 1}.' + img_bytes.name.split('.')[1]
-                add_files_in_folder(path=path, files={file_name: data_file})
-                files['images'] += [f"http://192.168.0.104:8000/{files}"]
-            files['images'] = ', '.join(files['images'])
-            new_message.message_images = str(files)
-        new_message.save()
+    mess = Message.objects.filter(id=message['id']).first()
+    mess.text = mess.text if message.get('message', None) is None else message.get('message', None)
+    mess.image = mess.image if message.get('image', None) is None else message.get('image', None)
+    mess.save()
 
-        sio.emit('response', MessageSerializers(new_message).data)
-    except BaseException as err:
-        logging.warning(err)
+    data = MessageSerializers(mess).data
+    author = MyUser.objects.get(id=data['author'])
+
+    for user_sess in SOCKETSERVERSESSION:
+        if user_sess['userId'] == author.id:
+            user_sess['sid'] = sid
+    for user_sess in SOCKETSERVERSESSION:
+        if user_sess['chat'] == chat.id:
+            if user_sess['sid'] is not None:
+                data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                data['author'] = author.username
+                data['author_id'] = author.id
+                sio.emit('responseSendMessage', {'data': data}, room=user_sess['sid'])
 
 
 @sio.event
@@ -225,7 +281,8 @@ def join(sid, message):
 
         except AssertionError:
             chat = ChatRoom(
-                users=str(curr_user.id)
+                users=str(curr_user.id),
+                messages=''
             )
 
         chat.save()

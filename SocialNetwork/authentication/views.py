@@ -18,7 +18,7 @@ class AuthenticationView(APIView):
                     request_json = request.data
                     if not request_json:
                         resp = Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}})
-                        return make_resp(resp)
+                        return make_resp(resp, request.get_raw_uri())
 
                     request_json_new = {}
                     for key, value in request_json.items():
@@ -54,19 +54,20 @@ class AuthenticationView(APIView):
                     if any(MyUser.objects.filter(username=login_data['username']).all()):
                         resp = Response({'resultCode': 1, 'messages': ['User with this login has already exists'],
                                          'data': {}})
-                        return make_resp(resp)
+                        return make_resp(resp, request.get_raw_uri())
                     try:
                         new_user = MyUser.objects.create_user(username=login_data['username'], **request_json)
                     except django.db.utils.IntegrityError:
-                        return make_resp({'resultCode': 1, 'messages': ['Incorrect requests'], 'data': {}})
+                        return make_resp({'resultCode': 1, 'messages': ['Incorrect requests'], 'data': {}},
+                                         request.get_raw_uri())
                     new_user.set_password(login_data['password'])
                     new_user._generate_jwt_token()
                     new_user.save()
 
-                    create_folder(path='static/images/users/', folder_name=f'{new_user.id}')
+                    create_folder(path='static/docs/users/', folder_name=f'{new_user.id}')
 
                     if image['image']:
-                        path = f'static/images/users/{curr_user.id}/'
+                        path = f'static/docs/users/{curr_user.id}/'
 
                         data = image['image']
                         index = get_count_of_files(path)
@@ -85,41 +86,41 @@ class AuthenticationView(APIView):
                         curr_user.save()
 
                     resp = Response({'resultCode': 0, 'messages': [], 'data': {'token': new_user.token}})
-                    return make_resp(resp)
+                    return make_resp(resp, request.get_raw_uri())
                 except KeyError:
                     resp = Response({'resultCode': 1, 'messages': ['Incorrect requests'], 'data': {}})
-                    return make_resp(resp)
+                    return make_resp(resp, request.get_raw_uri())
             elif self.request_type == 'login':
                 request_json = request.data
                 if request_json.get('Token', None) is None:
                     if not request_json:
                         resp = Response({'resultCode': 1, 'messages': ['Empty request'], 'data': {}})
-                        return make_resp(resp)
+                        return make_resp(resp, request.get_raw_uri())
 
                     new_user = MyUser.objects.get_by_natural_key(request_json['email'])
                     if not new_user.check_password(request_json['password']):
                         resp = Response({'resultCode': 1, 'messages': ['Incorrect password'], 'data': {}})
-                        return make_resp(resp)
+                        return make_resp(resp, request.get_raw_uri())
 
                     new_user._generate_jwt_token()
                     new_user.save()
                     resp = Response({'resultCode': 0, 'token': new_user.token, 'data': {}})
-                    return make_resp(resp)
+                    return make_resp(resp, request.get_raw_uri())
                 else:
                     new_user = authenticate_user(request_json['Token'])
                     if new_user is not None:
                         resp = Response({'resultCode': 0, 'token': request_json['Token'], 'data': {}})
-                        return make_resp(resp)
+                        return make_resp(resp, request.get_raw_uri())
                     else:
                         resp = Response({'resultCode': 1, 'messages': [], 'data': {}})
-                        return make_resp(resp)
+                        return make_resp(resp, request.get_raw_uri())
         except BaseException as err:
             logging.warning(err)
-            return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+            return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}), request.get_raw_uri())
 
     def options(self, request, *args, **kwargs):
         resp = Response({})
-        return make_resp(resp)
+        return make_resp(resp, request.get_raw_uri())
 
     def get(self, request, *args, **kwargs):
         try:
@@ -127,31 +128,34 @@ class AuthenticationView(APIView):
             if str(user) != 'AnonymousUser' and user is not None:
                 user = authenticate_user(user)
                 if user is None:
-                    return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+                    return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}),
+                                     request.get_raw_uri())
                 resp = Response({'resultCode': 0, 'messages': [], 'data': {'id': user.id,
                                                                            'email': user.email,
                                                                            'login': user.username}})
-                return make_resp(resp)
+                return make_resp(resp, request.get_raw_uri())
             else:
-                resp = Response({'resultCode': 1, 'messages': ['You are not authentication'], 'data': {}})
+                resp = Response({'resultCode': 1, 'messages': ['You are not authentication'], 'data': {}},
+                                request.get_raw_uri())
                 return make_resp(resp)
         except BaseException as err:
             logging.warning(err)
-            return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+            return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}), request.get_raw_uri())
 
     def delete(self, request, *args, **kwargs):
         try:
             if self.request_type == 'login':
                 user = authenticate_user(request.headers['Token'])
                 if user is None:
-                    return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}))
+                    return make_resp(Response({'resultCode': 1, 'messages': ['Token expired'], 'data': {}}),
+                                     request.get_raw_uri())
                 user.token = ''
                 user.save()
                 resp = Response({'resultCode': 0, 'messages': [], 'data': {}})
-                return make_resp(resp)
+                return make_resp(resp, request.get_raw_uri())
         except BaseException as err:
             logging.warning(err)
-            return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}))
+            return make_resp(Response({'resultCode': 1, 'messages': ['WRONG'], 'data': {}}), request.get_raw_uri())
 
 
 def authenticate_user(token) -> MyUser:
