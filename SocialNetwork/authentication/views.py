@@ -123,15 +123,20 @@ class AuthenticationView(APIView):
         return make_resp(resp, request.get_raw_uri())
 
     def get(self, request, *args, **kwargs):
-        '''users = MyUser.objects.all()
-        for user in users:
-            user.photos = user.photos.replace('https://8c949f502a53.ngrok.io', 'https://8c949f502a53.ngrok.io')
-            user.save()
+        try:
+            users = MyUser.objects.all()
+            for user in users:
+                if user.photos:
+                    user.photos = user.photos.replace('https://d130650747d6.ngrok.io', 'https://8c949f502a53.ngrok.io')
+                    user.save()
 
-        posts = Post.objects.all()
-        for post in posts:
-            post.photo = post.photo.replace('https://8c949f502a53.ngrok.io', 'https://8c949f502a53.ngrok.io')
-            post.save()'''
+            posts = Post.objects.all()
+            for post in posts:
+                if post.photo:
+                    post.photo = post.photo.replace('https://d130650747d6.ngrok.io', 'https://8c949f502a53.ngrok.io')
+                    post.save()
+        except BaseException as err:
+            print(err, err.args)
         try:
             user = request.headers.get('Token', None)
             if str(user) != 'AnonymousUser' and user is not None:
