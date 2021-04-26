@@ -2108,3 +2108,186 @@ Traceback (most recent call last):
   File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 417, in stored_name
     raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
 ValueError: Missing staticfiles manifest entry for 'rest_framework/css/bootstrap.min.css'
+2021-04-26 16:18:36,952 WARNING django.request Not Found: /favicon.ico
+2021-04-26 16:40:41,582 WARNING root Not enough segments
+2021-04-26 16:40:43,882 WARNING root Not enough segments
+2021-04-26 16:40:44,238 WARNING root Not enough segments
+2021-04-26 16:40:51,255 WARNING root Not enough segments
+2021-04-26 16:40:51,989 WARNING root Not enough segments
+2021-04-26 16:40:52,800 WARNING root Not enough segments
+2021-04-26 16:41:37,181 WARNING root Not enough segments
+2021-04-26 16:41:40,801 WARNING root Not enough segments
+2021-04-26 16:41:50,422 WARNING root Not enough segments
+2021-04-26 16:42:45,942 WARNING root MyUser matching query does not exist.
+2021-04-26 16:42:46,740 WARNING root MyUser matching query does not exist.
+2021-04-26 16:42:48,506 WARNING root MyUser matching query does not exist.
+2021-04-26 16:42:51,814 WARNING root MyUser matching query does not exist.
+2021-04-26 16:42:52,459 WARNING root MyUser matching query does not exist.
+2021-04-26 16:42:53,805 WARNING root MyUser matching query does not exist.
+2021-04-26 16:42:59,688 WARNING root Not enough segments
+2021-04-26 16:43:07,211 WARNING root Not enough segments
+2021-04-26 16:43:08,413 WARNING root Not enough segments
+2021-04-26 16:43:08,771 WARNING root Not enough segments
+2021-04-26 16:43:09,175 WARNING root Not enough segments
+2021-04-26 16:43:09,621 WARNING root Not enough segments
+2021-04-26 16:43:11,558 WARNING root Not enough segments
+2021-04-26 16:43:20,938 WARNING root Not enough segments
+2021-04-26 16:43:25,378 WARNING root Not enough segments
+2021-04-26 16:43:26,380 WARNING root Not enough segments
+2021-04-26 16:43:28,275 WARNING root Not enough segments
+2021-04-26 16:43:31,937 WARNING root Not enough segments
+2021-04-26 16:43:32,305 WARNING root Not enough segments
+2021-04-26 16:43:32,646 WARNING root Not enough segments
+2021-04-26 16:43:33,045 WARNING root Not enough segments
+2021-04-26 16:43:45,353 WARNING root Not enough segments
+2021-04-26 16:43:54,194 WARNING root Not enough segments
+2021-04-26 16:44:04,120 WARNING root Not enough segments
+2021-04-26 16:44:04,925 WARNING root Not enough segments
+2021-04-26 16:44:06,563 WARNING root Not enough segments
+2021-04-26 16:44:08,452 WARNING root Not enough segments
+2021-04-26 16:44:08,805 WARNING root Not enough segments
+2021-04-26 16:44:09,215 WARNING root Not enough segments
+2021-04-26 16:44:09,625 WARNING root Not enough segments
+2021-04-26 16:44:15,775 WARNING root Not enough segments
+2021-04-26 16:44:18,583 WARNING root Not enough segments
+2021-04-26 16:44:19,803 WARNING root Not enough segments
+2021-04-26 16:44:20,277 WARNING root Not enough segments
+2021-04-26 16:44:20,707 WARNING root Not enough segments
+2021-04-26 16:44:21,258 WARNING root Not enough segments
+2021-04-26 16:44:21,782 WARNING root Not enough segments
+2021-04-26 16:44:21,960 WARNING root Not enough segments
+2021-04-26 16:44:25,201 WARNING root Not enough segments
+2021-04-26 16:45:16,085 WARNING root 'large'
+2021-04-26 16:45:16,440 WARNING root 'large'
+2021-04-26 16:45:18,783 WARNING root 'large'
+2021-04-26 16:45:19,262 WARNING root 'large'
+2021-04-26 16:45:20,624 WARNING root 'large'
+2021-04-26 16:45:29,862 WARNING root 'large'
+2021-04-26 16:45:30,222 WARNING root 'large'
+2021-04-26 16:45:35,964 WARNING root Not enough segments
+2021-04-26 16:45:39,195 WARNING root Not enough segments
+2021-04-26 16:45:43,458 WARNING root Not enough segments
+2021-04-26 16:45:45,100 WARNING root 'large'
+2021-04-26 16:45:45,103 WARNING root Not enough segments
+2021-04-26 16:45:45,492 WARNING root 'large'
+2021-04-26 16:45:46,086 WARNING root 'large'
+2021-04-26 16:45:48,692 WARNING root Not enough segments
+2021-04-26 16:45:49,081 WARNING root 'large'
+2021-04-26 16:45:49,577 WARNING root 'large'
+2021-04-26 16:45:49,751 WARNING root 'large'
+2021-04-26 16:45:50,119 WARNING root 'large'
+2021-04-26 16:45:50,711 WARNING root 'large'
+2021-04-26 16:45:52,219 WARNING root Not enough segments
+2021-04-26 16:45:53,938 WARNING root 'large'
+2021-04-26 16:45:54,293 WARNING root 'large'
+2021-04-26 16:45:56,502 WARNING root Not enough segments
+2021-04-26 16:45:57,120 WARNING root Not enough segments
+2021-04-26 16:45:57,450 WARNING root Not enough segments
+2021-04-26 16:46:04,865 WARNING root Not enough segments
+2021-04-26 16:46:04,892 WARNING root Not enough segments
+2021-04-26 16:46:07,036 WARNING root Not enough segments
+2021-04-26 16:46:07,370 WARNING root Not enough segments
+2021-04-26 16:46:07,692 WARNING root Not enough segments
+2021-04-26 16:46:08,021 WARNING root Not enough segments
+2021-04-26 16:46:14,534 WARNING root Not enough segments
+2021-04-26 16:46:18,158 WARNING root Not enough segments
+2021-04-26 16:46:20,426 WARNING root Not enough segments
+2021-04-26 16:46:21,017 WARNING root Not enough segments
+2021-04-26 16:46:21,469 WARNING root Not enough segments
+2021-04-26 16:46:26,246 WARNING root 'large'
+2021-04-26 16:46:32,472 WARNING root Not enough segments
+2021-04-26 16:46:35,201 WARNING root 'large'
+2021-04-26 16:46:35,617 WARNING root 'large'
+2021-04-26 16:46:37,149 WARNING root Not enough segments
+2021-04-26 16:46:39,046 WARNING root 'large'
+2021-04-26 16:46:40,196 WARNING root 'large'
+2021-04-26 16:46:40,441 WARNING root Not enough segments
+2021-04-26 16:46:44,869 WARNING root 'large'
+2021-04-26 16:46:45,227 WARNING root 'large'
+2021-04-26 16:46:48,974 WARNING root Not enough segments
+2021-04-26 16:46:50,824 WARNING root Not enough segments
+2021-04-26 16:46:51,151 WARNING root Not enough segments
+2021-04-26 16:46:51,471 WARNING root Not enough segments
+2021-04-26 16:46:51,819 WARNING root Not enough segments
+2021-04-26 16:46:52,140 WARNING root Not enough segments
+2021-04-26 16:46:52,477 WARNING root Not enough segments
+2021-04-26 16:46:52,801 WARNING root Not enough segments
+2021-04-26 16:46:53,129 WARNING root Not enough segments
+2021-04-26 16:46:53,451 WARNING root Not enough segments
+2021-04-26 16:46:53,771 WARNING root Not enough segments
+2021-04-26 16:46:54,091 WARNING root Not enough segments
+2021-04-26 16:46:54,419 WARNING root Not enough segments
+2021-04-26 16:46:54,741 WARNING root Not enough segments
+2021-04-26 16:46:55,061 WARNING root Not enough segments
+2021-04-26 16:46:55,854 WARNING root 'large'
+2021-04-26 16:46:56,200 WARNING root 'large'
+2021-04-26 16:49:13,630 WARNING root 'large'
+2021-04-26 16:49:14,094 WARNING root 'large'
+2021-04-26 16:49:17,626 WARNING root 'large'
+2021-04-26 16:49:17,996 WARNING root 'large'
+2021-04-26 16:50:34,644 WARNING root 'large'
+2021-04-26 16:50:35,058 WARNING root 'large'
+2021-04-26 16:50:44,551 WARNING root 'large'
+2021-04-26 16:50:46,680 WARNING root 'large'
+2021-04-26 16:51:06,954 WARNING root 'large'
+2021-04-26 16:51:07,999 WARNING root 'large'
+2021-04-26 16:51:22,946 WARNING root 'large'
+2021-04-26 16:51:23,310 WARNING root 'large'
+2021-04-26 16:51:38,850 WARNING root 'large'
+2021-04-26 16:51:39,217 WARNING root 'large'
+2021-04-26 16:52:05,414 WARNING root 'large'
+2021-04-26 16:52:05,784 WARNING root 'large'
+2021-04-26 16:52:19,031 WARNING root 'large'
+2021-04-26 16:52:19,396 WARNING root 'large'
+2021-04-26 16:52:38,699 WARNING root 'large'
+2021-04-26 16:52:39,077 WARNING root 'large'
+2021-04-26 16:53:05,683 WARNING root 'token'
+2021-04-26 16:53:16,142 WARNING root 'token'
+2021-04-26 16:53:42,847 WARNING root 'large'
+2021-04-26 16:53:43,239 WARNING root 'large'
+2021-04-26 16:55:22,520 WARNING root 'large'
+2021-04-26 16:55:22,882 WARNING root 'large'
+2021-04-26 16:55:26,343 WARNING root 'large'
+2021-04-26 16:55:27,682 WARNING root 'large'
+2021-04-26 16:55:52,114 WARNING root 'large'
+2021-04-26 16:55:52,479 WARNING root 'large'
+2021-04-26 16:56:00,061 WARNING root 'large'
+2021-04-26 16:56:00,426 WARNING root 'large'
+2021-04-26 16:56:07,997 WARNING root 'large'
+2021-04-26 16:56:09,121 WARNING root 'large'
+2021-04-26 16:56:25,949 WARNING root 'large'
+2021-04-26 16:56:26,369 WARNING root 'large'
+2021-04-26 16:56:34,929 WARNING root 'token'
+2021-04-26 16:56:43,916 WARNING django.request Not Found: /chats/1
+2021-04-26 16:57:05,779 WARNING root 'token'
+2021-04-26 16:57:28,007 WARNING root 'large'
+2021-04-26 16:57:28,368 WARNING root 'large'
+2021-04-26 16:57:40,824 WARNING root 'token'
+2021-04-26 17:20:28,946 WARNING root 'large'
+2021-04-26 17:20:29,419 WARNING root 'large'
+2021-04-26 17:20:54,741 WARNING root 'large'
+2021-04-26 17:20:57,475 WARNING root 'large'
+2021-04-26 17:21:50,907 WARNING root 'large'
+2021-04-26 17:21:51,749 WARNING root 'large'
+2021-04-26 17:28:12,935 WARNING root 'large'
+2021-04-26 17:28:13,335 WARNING root 'large'
+2021-04-26 18:54:52,616 WARNING root Not enough segments
+2021-04-26 19:40:36,042 WARNING root Not enough segments
+2021-04-26 20:33:52,734 WARNING root 'large'
+2021-04-26 20:33:53,079 WARNING root 'large'
+2021-04-26 20:35:50,272 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-26 20:35:50,273 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 20:35:53,831 WARNING root 'large'
+2021-04-26 20:35:54,169 WARNING root 'large'
+2021-04-26 20:36:02,709 WARNING root 'large'
+2021-04-26 20:36:03,037 WARNING root 'large'
+2021-04-26 20:36:05,106 WARNING root 'large'
+2021-04-26 20:36:05,448 WARNING root 'large'
+2021-04-26 20:36:07,065 WARNING root 'large'
+2021-04-26 20:36:07,373 WARNING root 'large'
+2021-04-26 20:36:11,412 WARNING root 'large'
+2021-04-26 20:36:11,750 WARNING root 'large'
+2021-04-26 20:36:56,052 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-26 20:36:56,052 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 20:40:29,860 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-26 20:40:29,860 DEBUG asyncio Using proactor: IocpProactor

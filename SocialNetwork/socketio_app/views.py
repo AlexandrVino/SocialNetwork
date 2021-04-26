@@ -51,21 +51,21 @@ class ChatsView(APIView):
                                 Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
 
                             us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
-                            chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
+                            chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos').get('large', None)
                             chat['lastMessage']['author'] = user.fullName
                         else:
                             chat['lastMessage'] = {}
-                            chat['lastMessage']['photo'] = load_json_from_str(user.photos, 'photos')['large']
+                            chat['lastMessage']['photo'] = load_json_from_str(user.photos, 'photos').get('large', None)
                             chat['lastMessage']['author'] = None
                         chat['title'] = user.fullName
-                        chat['photo'] = load_json_from_str(user.photos, 'photos')['large']
+                        chat['photo'] = load_json_from_str(user.photos, 'photos').get('large', None)
                     else:
                         chat['lastMessage'] = MessageSerializers(
                             Message.objects.filter(id=chat['messages'].split(', ')[-1]).first()).data
                         user = MyUser.objects.filter(id=[int(us_id) for us_id in chat['users'].split(', ')
                                                          if int(us_id) != curr_user.id][0]).first()
                         us_mess = MyUser.objects.filter(id=int(chat['lastMessage']['author'])).first()
-                        chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos')['large']
+                        chat['lastMessage']['photo'] = load_json_from_str(us_mess.photos, 'photos').get('large', None)
                         chat['lastMessage']['author'] = user.fullName
                         chat['photo'] = None
                     del chat['messages']
@@ -89,7 +89,7 @@ class ChatsView(APIView):
                         if str(mess.id) in mess_ids.split(', '):
                             data = MessageSerializers(mess).data
                             author = MyUser.objects.get(id=data['author'])
-                            data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                            data['photo'] = load_json_from_str(author.photos, 'photos').get('large', None)
                             data['author'] = author.username
                             data['author_id'] = author.id
                             arr += [data]
@@ -105,7 +105,7 @@ class ChatsView(APIView):
                     for user_json in users:
                         user_js = {}
                         if str(user_json['id']) in chat['users'].split(', '):
-                            user_js['photo'] = load_json_from_str(user_json['photos'], 'photos')['large']
+                            user_js['photo'] = load_json_from_str(user_json['photos'], 'photos').get('large', None)
                             user_js['fullName'] = user_json['username'] if not user_json['fullName'] \
                                 else user_json['fullName']
                             user_js['id'] = user_json['id']
@@ -125,7 +125,7 @@ class ChatsView(APIView):
                         if str(mess.id) in mess_ids.split(', '):
                             data = MessageSerializers(mess).data
                             author = MyUser.objects.get(id=data['author'])
-                            data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                            data['photo'] = load_json_from_str(author.photos, 'photos').get('large', None)
                             data['author'] = author.username
                             data['author_id'] = author.id
                             arr += [data]
@@ -138,7 +138,7 @@ class ChatsView(APIView):
                     for user_json in users:
                         user_js = {}
                         if str(user_json['id']) in chat['users'].split(', '):
-                            user_js['photo'] = load_json_from_str(user_json['photos'], 'photos')['large']
+                            user_js['photo'] = load_json_from_str(user_json['photos'], 'photos').get('large', None)
                             user_js['fullName'] = user_json['username'] if not user_json['fullName'] \
                                 else user_json['fullName']
                             user_js['id'] = user_json['id']
@@ -220,7 +220,7 @@ def send_message(sid, message):
     for user_sess in SOCKETSERVERSESSION:
         if user_sess['chat'] == chat.id:
             if user_sess['sid'] is not None:
-                data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                data['photo'] = load_json_from_str(author.photos, 'photos').get('large', None)
                 data['author'] = author.username
                 data['author_id'] = author.id
                 sio.emit('responseSendMessage', {'data': data}, room=user_sess['sid'])
@@ -272,7 +272,7 @@ def edit_message(sid, message):
     for user_sess in SOCKETSERVERSESSION:
         if user_sess['chat'] == chat.id:
             if user_sess['sid'] is not None:
-                data['photo'] = load_json_from_str(author.photos, 'photos')['large']
+                data['photo'] = load_json_from_str(author.photos, 'photos').get('large', None)
                 data['author'] = author.username
                 data['author_id'] = author.id
                 sio.emit('responseSendMessage', {'data': data}, room=user_sess['sid'])
