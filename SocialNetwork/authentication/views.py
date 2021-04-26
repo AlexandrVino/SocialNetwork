@@ -79,9 +79,9 @@ class AuthenticationView(APIView):
                         all_photos = load_json_from_str(curr_user.photos, 'photos').get('all', '')
                         base = all_photos if any(all_photos) else []
 
-                        all_photos = base + [f"https://d130650747d6.ngrok.io/{path}{file_name}"]
-                        curr_user.photos = str({"large": f"https://d130650747d6.ngrok.io/{path}{file_name}",
-                                                "small": f"https://d130650747d6.ngrok.io/{path}{file_name}",
+                        all_photos = base + [f"https://8c949f502a53.ngrok.io/{path}{file_name}"]
+                        curr_user.photos = str({"large": f"https://8c949f502a53.ngrok.io/{path}{file_name}",
+                                                "small": f"https://8c949f502a53.ngrok.io/{path}{file_name}",
                                                 "all": f"{'; '.join(all_photos)}"})
                         curr_user.save()
 
@@ -125,12 +125,12 @@ class AuthenticationView(APIView):
     def get(self, request, *args, **kwargs):
         '''users = MyUser.objects.all()
         for user in users:
-            user.photos = user.photos.replace('https://d130650747d6.ngrok.io', 'https://8c949f502a53.ngrok.io')
+            user.photos = user.photos.replace('https://8c949f502a53.ngrok.io', 'https://8c949f502a53.ngrok.io')
             user.save()
 
         posts = Post.objects.all()
         for post in posts:
-            post.photo = post.photo.replace('https://d130650747d6.ngrok.io', 'https://8c949f502a53.ngrok.io')
+            post.photo = post.photo.replace('https://8c949f502a53.ngrok.io', 'https://8c949f502a53.ngrok.io')
             post.save()'''
         try:
             user = request.headers.get('Token', None)

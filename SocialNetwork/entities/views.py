@@ -388,11 +388,11 @@ class ProfileView(APIView):
                 all_photos = load_json_from_str(curr_user.photos, 'photos').get('all', '')
                 base = all_photos if any(all_photos) else []
 
-                all_photos = base + [f"https://d130650747d6.ngrok.io/{path}{file_name}"]
-                large_and_small = {"large": f"https://d130650747d6.ngrok.io/{path}{file_name}",
-                                   "small": f"https://d130650747d6.ngrok.io/{path}{file_name}"}
-                curr_user.photos = str({"large": f"https://d130650747d6.ngrok.io/{path}{file_name}",
-                                        "small": f"https://d130650747d6.ngrok.io/{path}{file_name}",
+                all_photos = base + [f"https://8c949f502a53.ngrok.io/{path}{file_name}"]
+                large_and_small = {"large": f"https://8c949f502a53.ngrok.io/{path}{file_name}",
+                                   "small": f"https://8c949f502a53.ngrok.io/{path}{file_name}"}
+                curr_user.photos = str({"large": f"https://8c949f502a53.ngrok.io/{path}{file_name}",
+                                        "small": f"https://8c949f502a53.ngrok.io/{path}{file_name}",
                                         "all": f"{'; '.join(all_photos)}"})
                 curr_user.save()
                 posts = Post.objects.filter(author=curr_user.id).all()
