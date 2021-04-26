@@ -11,8 +11,8 @@ logging.basicConfig(
 
 def make_resp(response, url):
     url = url.split('/')[:3]
-    # response["Access-Control-Allow-Origin"] = 'https://madnessianin.github.io'
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'https://madnessianin.github.io'
+    # response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
     response["access-control-allow-headers"] = "Origin, X-Requested-With, Content-Type, Accept, API-KEY, token"
     response["access-control-allow-methods"] = "GET, POST, PUT, DELETE, OPTIONS"
     response["access-control-allow-credentials"] = 'true'

@@ -14,7 +14,8 @@ from rest_framework.views import APIView
 
 async_mode = 'eventlet'
 basedir = os.path.dirname(os.path.realpath(__file__))
-sio = socketio.Server(async_mode=async_mode, cors_allowed_origins=['http://localhost:3000'])
+sio = socketio.Server(async_mode=async_mode, cors_allowed_origins=['http://localhost:3000',
+                                                                   'https://madnessianin.github.io'])
 
 SOCKETSERVERSESSION = []
 

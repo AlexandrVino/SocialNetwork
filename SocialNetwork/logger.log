@@ -1825,3 +1825,286 @@ AttributeError: 'NoneType' object has no attribute 'users'
 2021-04-26 01:46:13,702 DEBUG asyncio Using proactor: IocpProactor
 2021-04-26 01:47:25,525 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
 2021-04-26 01:47:25,526 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:11:05,668 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\SocialNetwork\settings.py changed, reloading.
+2021-04-26 13:11:05,891 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:12:08,440 WARNING django.request Not Found: /
+2021-04-26 13:12:09,131 WARNING django.request Not Found: /
+2021-04-26 13:12:10,270 WARNING django.request Not Found: /
+2021-04-26 13:12:11,158 WARNING django.request Not Found: /
+2021-04-26 13:12:13,483 WARNING django.request Not Found: /
+2021-04-26 13:12:13,854 WARNING django.request Not Found: /favicon.ico
+2021-04-26 13:21:06,862 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-26 13:21:06,862 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:21:42,117 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\socketio_app\views.py changed, reloading.
+2021-04-26 13:21:42,118 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:22:26,676 WARNING root HTTP status code must be an integer.
+2021-04-26 13:22:26,731 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    ret = template.render(context, request=renderer_context['request'])
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 106, in render
+    url = self.url(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 103, in url
+    return self.handle_simple(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 147, in url
+    return self._url(self.stored_name, name, force)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 126, in _url
+    hashed_name = hashed_name_func(*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 417, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'rest_framework/css/bootstrap.min.css'
+2021-04-26 13:22:27,529 WARNING django.request Not Found: /favicon.ico
+2021-04-26 13:33:40,393 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 13:33:40,393 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:34:28,040 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 13:34:28,040 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:35:59,167 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 13:35:59,167 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:36:42,315 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 13:36:42,315 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:37:05,696 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 13:37:05,696 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 13:42:10,283 WARNING django.request Not Found: /favicon.ico
+2021-04-26 13:56:45,779 WARNING root Not enough segments
+2021-04-26 14:06:01,289 WARNING root Not enough segments
+2021-04-26 14:06:29,305 WARNING root Not enough segments
+2021-04-26 14:14:00,309 WARNING root Not enough segments
+2021-04-26 14:15:40,337 WARNING root Not enough segments
+2021-04-26 14:17:42,806 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\views.py changed, reloading.
+2021-04-26 14:17:42,806 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:28:58,091 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-26 14:28:58,091 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:31:21,471 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\entities\tools.py changed, reloading.
+2021-04-26 14:31:21,472 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:39:40,114 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:44:42,066 WARNING django.request Not Found: /
+2021-04-26 14:44:42,342 WARNING django.request Not Found: /apple-touch-icon-precomposed.png
+2021-04-26 14:44:42,796 WARNING django.request Not Found: /favicon.ico
+2021-04-26 14:44:43,099 WARNING django.request Not Found: /apple-touch-icon.png
+2021-04-26 14:44:43,769 WARNING django.request Not Found: /
+2021-04-26 14:44:44,055 WARNING django.request Not Found: /apple-touch-icon-precomposed.png
+2021-04-26 14:44:44,456 WARNING django.request Not Found: /apple-touch-icon.png
+2021-04-26 14:44:44,462 WARNING django.request Not Found: /favicon.ico
+2021-04-26 14:51:17,087 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 14:51:17,087 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:51:47,978 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 14:51:47,979 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:52:29,805 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 14:52:29,806 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:52:34,588 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 133, in get
+    post.photo = post.photo.replace('https://d130650747d6.ngrok.io', 'https://8c949f502a53.ngrok.io')
+AttributeError: 'MyUser' object has no attribute 'photo'
+2021-04-26 14:52:44,830 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py", line 133, in get
+    post.photo = post.photo.replace('https://d130650747d6.ngrok.io', 'https://8c949f502a53.ngrok.io')
+AttributeError: 'MyUser' object has no attribute 'photo'
+2021-04-26 14:52:45,255 WARNING django.request Not Found: /favicon.ico
+2021-04-26 14:53:46,347 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 14:53:46,348 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:53:49,591 WARNING root HTTP status code must be an integer.
+2021-04-26 14:53:49,619 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    ret = template.render(context, request=renderer_context['request'])
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 106, in render
+    url = self.url(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 103, in url
+    return self.handle_simple(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 147, in url
+    return self._url(self.stored_name, name, force)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 126, in _url
+    hashed_name = hashed_name_func(*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 417, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'rest_framework/css/bootstrap.min.css'
+2021-04-26 14:54:26,390 INFO django.utils.autoreload E:\Python\Yandex\Projects\SocialNetworkOnPythonDjango\SocialNetwork\authentication\views.py changed, reloading.
+2021-04-26 14:54:26,391 DEBUG asyncio Using proactor: IocpProactor
+2021-04-26 14:54:30,225 WARNING root HTTP status code must be an integer.
+2021-04-26 14:54:30,254 ERROR django.request Internal Server Error: /auth/me
+Traceback (most recent call last):
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\rest_framework\renderers.py", line 725, in render
+    ret = template.render(context, request=renderer_context['request'])
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 106, in render
+    url = self.url(context)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 103, in url
+    return self.handle_simple(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\templatetags\static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 147, in url
+    return self._url(self.stored_name, name, force)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 126, in _url
+    hashed_name = hashed_name_func(*args)
+  File "E:\Python\venvs\SocialNetworkOnPythonDjango\lib\site-packages\django\contrib\staticfiles\storage.py", line 417, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'rest_framework/css/bootstrap.min.css'
